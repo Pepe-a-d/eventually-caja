@@ -5,9 +5,10 @@ Estado a **19 de noviembre de 2026**, con el prototipo v2 (caja-expositor) ya mo
 ## 1. Resumen
 
 - **Estado**: concepto cerrado y **prototipo v2 («caja-expositor») modelado en Fusion** (apartado 1b). **Nada impreso, nada medido** sobre el reloj real.
-- **Por qué hay una v2**: el usuario vio la v1 (caja alta que se abría por arriba) y dijo que era muy incómodo acceder al reloj y usar la caja como expositor. Pidió rediseñar el sistema, una llave más fina y estilizada, y la frase con la tipografía del reloj y de la web. También dijo que tiene imanes de sobra.
+- **Por qué hay una v2**: el usuario vio la v1 (caja alta que se abría por arriba) y dijo que era muy incómodo acceder al reloj y usar la caja como expositor. Pidió rediseñar el sistema, una llave más fina y estilizada, y la frase con la tipografía del reloj y de la web. También dijo que tenía imanes de sobra; **corregido el 19-nov-2026: los ha contado y son 14**.
 - **Siguiente paso**: que el usuario revise la v2; después, imprimir tapa + rotor + tapeta + aguja, que hacen de probeta del riesgo R1.
 - **Plazo**: la tarjeta y la web dicen «montado a mano, diciembre de 2026». La fecha de entrega no consta: **preguntarla**.
+- **Revisión crítica**: `contra-reporte-v2.md` (19-nov-2026) analiza la v2 y lista lo que hay que cambiar en la v3, con cálculos de fuerzas y un plan de cinco probetas. Leerlo antes de tocar el modelo.
 - **Ojo**: donde los apartados 5, 6 y 7 (brief v0) no coincidan con el apartado 1b (prototipo v2), **manda el 1b**. El repositorio de GitHub sigue en v0: no se ha tocado.
 - **Carpeta de trabajo** en el ordenador del usuario: `C:\Users\pepea\Documents\FusionClaude\WatchBox`. Ahí está todo: modelos, ficheros para imprimir, generador, capturas, reporte y copia de estos documentos.
 - **GitHub, pendiente.** El 19-nov-2026 el usuario pidió subirlo todo a `Pepe-a-d/eventually-caja`. **No se pudo**: la sesión de Claude solo tenía lectura (el proxy de git respondió que el repositorio no estaba en el conjunto autorizado y `add_repo` con acceso de escritura fue rechazado por falta de permiso push). La carpeta de trabajo quedó preparada como espejo exacto de lo que debe ir al repositorio: incluye `README.md`, el `BRIEF.md` original con un aviso de que es la v0, `parametros-fusion.csv` y `referencias\`. Antes de dar por hecho que está subido, comprobar el repositorio.
@@ -115,7 +116,7 @@ La caja es más profunda que la v1 (87,6 mm frente a 64) porque el reloj va de p
 | Tarjeta | Certificado de autenticidad, 85 × 55 mm, cartulina de 300–350 g. Anverso: «Late Edition · 1 of 1», «Eventually», «Llegará. Cuando llegue.» Reverso: ficha, «Montado a mano para Pablo. Pepe» y el QR. Diseño en Figma: https://www.figma.com/design/zTqZch5frY3qcnWlQMConH |
 | QR | `referencias/qr.svg`, 33 módulos, azul `#1F3FA8`. **Comprobado**: lleva a https://pepe-a-d.github.io/eventually/ |
 | NFC | Etiqueta de 25 mm de diámetro que lleva a la web. El usuario la tiene. |
-| Imanes | Discos de 5 × 1,6 mm. El usuario dice que tiene de sobra (19-nov-2026). La v2 usa 24. |
+| Imanes | Discos de 5 × 1,6 mm. **Tiene 14 contados** (y alguno suelto más), dato del 19-nov-2026 que corrige el «de sobra» anterior. La v2 usa 24: no se puede montar. La v3 debe salir con 14 como máximo; ver `contra-reporte-v2.md`, apartado I4. |
 
 ## 3. El concepto y las decisiones cerradas
 
@@ -351,7 +352,7 @@ Son los 75 parámetros cargados en Fusion, sacados de `P_DEF` en `generador_caja
 9. ¿Cuál es la fecha de entrega del regalo?
 10. ~~¿La aguja mide 44 o 58 mm?~~ La v2 mide 51,8 mm, más fina, a petición del usuario.
 11. ¿Frase con coma y punto, o como está en la esfera real? (H9)
-12. ~~¿Cuántos imanes hay?~~ Resuelta: el usuario dice que tiene de sobra. La v2 usa 24.
+12. ~~¿Cuántos imanes hay?~~ Resuelta el 19-nov-2026: **14**. La v2 usa 24, así que el límite para la v3 es 14.
 13. ¿Visto bueno a la v2 (apartado 1b)? En especial: apertura frontal, reloj recostado 25°, tarjeta como telón de fondo, forma de la aguja y tamaño de la caja (98 × 92 × 83 mm con funda).
 
 ## 13. Próximos pasos
