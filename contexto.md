@@ -1,19 +1,69 @@
 # Eventually, la caja: contexto
 
-Estado a **19 de noviembre de 2026**, con el prototipo v2 (caja-expositor) ya modelado en Fusion. Integra el repositorio `Pepe-a-d/eventually-caja` (commit `0fda075`: `BRIEF.md`, `parametros-fusion.csv` y cinco referencias), la web publicada y un análisis de coherencia hecho por Claude ese día.
+Estado a **19 de noviembre de 2026**, con el **prototipo v3** ya modelado en Fusion (apartado 1c). Integra el repositorio `Pepe-a-d/eventually-caja` (hasta el commit `4153169`), la web publicada, el contra-reporte de la v2 y el trabajo de las tres versiones. **Donde este documento hable de la v2 o del brief y no coincida con el apartado 1c, manda el 1c.**
 
 ## 1. Resumen
 
-- **Estado**: concepto cerrado y **prototipo v2 («caja-expositor») modelado en Fusion** (apartado 1b). **Nada impreso, nada medido** sobre el reloj real.
-- **Por qué hay una v2**: el usuario vio la v1 (caja alta que se abría por arriba) y dijo que era muy incómodo acceder al reloj y usar la caja como expositor. Pidió rediseñar el sistema, una llave más fina y estilizada, y la frase con la tipografía del reloj y de la web. También dijo que tenía imanes de sobra; **corregido el 19-nov-2026: los ha contado y son 14**.
-- **Siguiente paso**: que el usuario revise la v2; después, imprimir tapa + rotor + tapeta + aguja, que hacen de probeta del riesgo R1.
+- **Estado**: **prototipo v3 modelado en Fusion y exportado** (apartado 1c). **Nada impreso, nada medido** sobre el reloj real. Van cuatro versiones (v0 brief, v1, v2, v3) sin imprimir una pieza.
+- **Por qué hay una v3**: el 19-nov-2026 se subió al repositorio `contra-reporte-v2.md`, una revisión crítica de la v2 con 6 fallos graves, 11 importantes, cálculos de fuerzas, la especificación de la v3 en 23 puntos y un plan de cinco probetas. El usuario pidió: «léelo, analízalo y prepara una v3 teniendo en cuenta todos los requisitos y anotaciones». La respuesta punto por punto está en `reporte-v3/reporte-v3.md`.
+- **Por qué hubo una v2**: el usuario vio la v1 (caja alta que se abría por arriba) y dijo que era muy incómodo acceder al reloj y usar la caja como expositor. Pidió rediseñar el sistema, una llave más fina y estilizada, y la frase con la tipografía del reloj y de la web.
+- **Imanes**: el usuario tiene **14 contados** (dato del 19-nov-2026 que corrige un «de sobra» anterior) y **no tiene chapas de acero**. La v3 usa 8; 10 con una aguja de repuesto.
+- **Siguiente paso**: **imprimir la probeta P0 y la P1** (`reporte-v3/plan-de-pruebas.md`). No modelar más hasta tener ese resultado. En paralelo, medir el reloj: lo primero, el contorno interior del brazalete cerrado.
 - **Plazo**: la tarjeta y la web dicen «montado a mano, diciembre de 2026». La fecha de entrega no consta: **preguntarla**.
-- **Revisión crítica**: `contra-reporte-v2.md` (19-nov-2026) analiza la v2 y lista lo que hay que cambiar en la v3, con cálculos de fuerzas y un plan de cinco probetas. Leerlo antes de tocar el modelo.
-- **Ojo**: donde los apartados 5, 6 y 7 (brief v0) no coincidan con el apartado 1b (prototipo v2), **manda el 1b**. El repositorio de GitHub sigue en v0: no se ha tocado.
-- **Carpeta de trabajo** en el ordenador del usuario: `C:\Users\pepea\Documents\FusionClaude\WatchBox`. Ahí está todo: modelos, ficheros para imprimir, generador, capturas, reporte y copia de estos documentos.
-- **GitHub, pendiente.** El 19-nov-2026 el usuario pidió subirlo todo a `Pepe-a-d/eventually-caja`. **No se pudo**: la sesión de Claude solo tenía lectura (el proxy de git respondió que el repositorio no estaba en el conjunto autorizado y `add_repo` con acceso de escritura fue rechazado por falta de permiso push). La carpeta de trabajo quedó preparada como espejo exacto de lo que debe ir al repositorio: incluye `README.md`, el `BRIEF.md` original con un aviso de que es la v0, `parametros-fusion.csv` y `referencias\`. Antes de dar por hecho que está subido, comprobar el repositorio.
+- **Carpeta de trabajo** en el ordenador del usuario: `C:\Users\pepea\Documents\FusionClaude\WatchBox`. Ahí está todo.
+- **GitHub**: `Pepe-a-d/eventually-caja`, público, rama `main`. El 19-nov-2026 **el usuario subió la v2 a mano** (commit `e340db5`, «Add files via upload»). Después llegaron dos commits con el contra-reporte (`331fa6b` y `4153169`, autor `5vm4hcmchy-hub`, hechos desde otra sesión de Claude). **La v3 no está subida**: la sesión de Claude de este proyecto sigue sin permiso de escritura. Se probó tres veces: el proxy de git respondió que el repositorio no está en el conjunto autorizado, `add_repo` con escritura fue rechazado por falta de permiso push, y el conector de GitHub (cuenta `Pepe-a-d`) devolvió «403 Resource not accessible by integration» al crear una rama. Los dos navegadores Chrome conectados a la cuenta son de macOS y el usuario dijo que no son suyos: no usarlos. Antes de dar algo por subido, comprobar el repositorio.
 
-## 1b. Prototipo v2: la caja-expositor (19-nov-2026)
+## 1c. Prototipo v3 (19-nov-2026)
+
+Sustituye a la v2. Detalle y figuras en `reporte-v3/reporte-v3.md`; montaje en `reporte-v3/guia-de-montaje.md`; pruebas en `reporte-v3/plan-de-pruebas.md`.
+
+**Cómo se usa.** Se levanta la funda (campana). Queda un bloque blanco con la aguja azul tumbada encima, a ras. La aguja se pone en el centro del frente, se gira 50° a la derecha y se queda. Se tira del panel por abajo. En la mano queda el panel con la tarjeta; dentro, el reloj de pie. Para cerrar se empuja el panel, sin aguja.
+
+**Piezas (9 imprimibles).**
+
+| Pieza | Material | Qué es |
+| --- | --- | --- |
+| `base` | PLA blanco | Caja interior, 94,0 × 70,3 × 91,7 mm. Boca al frente. Aguja guardada en un rebaje del techo. Rebaje en el suelo para la peana. Bisel de apertura bajo el panel, en dos tramos |
+| `tapa` | PLA blanco | Panel frontal a ras, 87,6 × 83,3 × 6,0 mm (7,7 con los carriles). Piel de 1,4. Esquina superior derecha achaflanada. Carriles en U para la tarjeta por detrás |
+| `tapeta` | PLA blanco | Tira de 40 mm en cola de milano que retiene el rotor. Entra por arriba, sin pegamento |
+| `rotor` | PLA blanco | Barra vertical de 8 mm con un pestillo en cada extremo, cubo, y una **espiral** de 1,5 vueltas que hace de muelle |
+| `aguja` | PLA azul | 54 mm, 2,6 de grueso. Cubo de 9, cola en pala, varilla de 2,2 a 1,6, flecha calada. Dos imanes embutidos |
+| `peana` | PLA blanco | Base encastrada en el suelo (talón a 45° y cuatro dientes) con dos cunas |
+| `pinza` | **PETG** | Pinza en C, extrusión pura de 36 mm. Cara plana rígida de 43 mm y brazo elástico de 1,6 |
+| `funda` + `frase` | Mármol + azul | Campana de 98,6 × 74,9 × 94,4 mm. Frase en el techo, NFC debajo por dentro |
+
+Referencias, no se imprimen: `reloj_referencia` (cabeza, corona, brazalete y cierre) y `tarjeta_referencia`.
+
+**Mecanismo.**
+
+- El rotor gira **hacia los dos lados** desde su reposo: 13,7° a izquierdas cuando la boca lo empuja al cerrar (resbalón) y 50° a derechas con la aguja. Se libera a 24,1°. No descansa contra un tope: lo centra la espiral.
+- El pico de cada pestillo está en la esquina de la barra, a 4 mm del eje; el canto va inclinado y lleva un chaflán de 2,2 mm en la cara de entrada.
+- Enganche de 2,0 mm; por encima de 1 mm entre −8° y +18,5° (del modelo).
+- Taladro de emergencia de 1,5 mm en el techo, sobre el pico del pestillo de arriba.
+- El imán del rotor y la pala de la aguja van a 16 mm del eje.
+
+**Imanes (8).** Aguja 2, central 1, rotor 1, esquinas del panel 2 (arriba-izquierda y abajo-derecha) y sus 2 parejas en la caja. Los de esquina van embutidos con pausa bajo 0,8 mm; los de la aguja, bajo 0,4. Regla de montaje: todos con la misma cara hacia el frente.
+
+**Comprobado en el modelo** (Fusion, 19-nov-2026): sin interferencias entre los 11 cuerpos; pestillo bloqueado de −12° a +22° grado a grado; el rotor gira libre de −15° a +50°; el resbalón pide al rotor hasta 13° y lo deja pasar; cristal a 3,0 mm de los carriles; brazalete a 3,0 mm del techo; 9,0 mm de hueco tras la pinza.
+
+**Calculado** (`reporte-v3/calculos-v3.txt`; `imanes.py` reproduce la tabla 3.1 del contra-reporte): aguja contra rotor 0,89 N a 2,0 mm; arrastre máximo 6,9 mN·m; espiral 1,0 mN·m a 50° con 0,6 mm de grueso; la aguja girada se sujeta con 5,0 mN·m; panel sujeto con 2,3 N; campo en el centro del movimiento 900 A/m (límite ISO 764: 4 800), 1 400 con la aguja puesta. El imán central queda a 17,2 mm del movimiento (23,7 en la v2).
+
+**Decisiones de Claude que se apartan del contra-reporte, y por qué.**
+
+- **Resbalón**: no es un chaflán en una punta centrada (no hace girar: el empuje pasa por el eje). Pico descentrado y giro en sentido contrario al de la aguja.
+- **Muelle**: no es un brazo que apoya en un tetón (se deformaría un 3 %). Espiral, al 0,35 %.
+- **Bisel**: no es a todo lo ancho; los 34 mm centrales son el labio del pestillo de abajo.
+- **Tapeta**: no cubre toda la cámara; las dos ventanas que deja las tapa la tarjeta. Así el panel no tiene puentes.
+- **Aguja guardada**: de atrás adelante y a la derecha, no centrada, para que su rebaje se imprima sin puente y quede lejos del NFC.
+- **Tamaño**: se cumple el fondo (74,9; objetivo 75) pero el alto sube a 94,4. Lo fija `brazalete_contorno`, hoy 180 mm por suposición: con 160 serían 84,6 de alto; con 200, 104,3.
+
+**Sin hacer**: punto 20 (mover `BRIEF.md` y la v1 a `archivo/`), punto 21 (pomo: no, se mantiene la aguja fina), punto 22 (aviso del imán en tarjeta o web) y punto 23 (texto interior).
+
+**Riesgos nuevos de la v3**, todos para las probetas: que la espiral se imprima pegada al alma que la cruza en puente; que el chaflán del resbalón deslice; la pinza con brazaletes en los extremos del rango; el labio en voladizo de los carriles; que la boquilla (de acero) arranque los imanes embutidos; que la peana, boca abajo, levante el frente unos 3 mm.
+
+**Parámetros**: 135, en `parametros-fusion-v3.csv`. El apartado 11 lista los de la v2: ya no valen.
+
+## 1b. Prototipo v2: la caja-expositor (19-nov-2026). SUSTITUIDO por la v3
 
 **La idea.** La caja ya no se abre por arriba: se abre **por delante**. El frente es un panel liso, como una esfera en blanco, y la aguja se coloca en su centro y se gira como la manecilla de un reloj. Al quitar el panel, la caja queda como una vitrina: el reloj de pie, recostado 25°, con la tarjeta de fondo.
 
@@ -252,7 +302,7 @@ Detectados por Claude al cruzar el brief con el CSV. **Ninguno está corregido e
 - **Regla**: todo blanco y liso; una sola cosa azul que se mueve.
 - **Frase según el brief**, con su partición: `Who cares,` / `I'm already late.` (ver H9).
 
-## 11. Parámetros del prototipo v2
+## 11. Parámetros del prototipo v2 (ya no valen: ver `parametros-fusion-v3.csv`)
 
 Son los 75 parámetros cargados en Fusion, sacados de `P_DEF` en `generador_caja_v2.py` (copia en `parametros-fusion-v2.csv`, en la carpeta de trabajo). Los marcados «v2» son nuevos o cambian respecto a la v1. El CSV del repositorio (commit `0fda075`, 54 parámetros) sigue en v0.
 
@@ -336,6 +386,10 @@ Son los 75 parámetros cargados en Fusion, sacados de `P_DEF` en `generador_caja
 
 ## 12. Preguntas abiertas
 
+**Añadidas con la v3**: ¿cuánto mide el contorno del brazalete? (manda en el alto de la caja); ¿de qué grado son los imanes?; ¿vale la funda de campana, que cambia el gesto de deslizar por el de levantar?; ¿vale el rebaje redondo para coger la aguja?
+
+**Las de abajo vienen de la v2**; las que hablan de la v2 ya no aplican.
+
 **Del brief:**
 
 1. ~~Modelo exacto de la impresora~~ Resuelta: X1 Carbon con AMS.
@@ -357,18 +411,20 @@ Son los 75 parámetros cargados en Fusion, sacados de `P_DEF` en `generador_caja
 
 ## 13. Próximos pasos
 
-1. Revisar la v2 con el usuario (pregunta 13) y las preguntas 2, 9 y 11.
-2. Imprimir tapa + rotor + tapeta + aguja: hacen de probeta de R1. Probar ahí también el cierre por gravedad.
-3. Medir el reloj montado y ajustar los parámetros marcados SUPUESTO; con el brazalete real, ver si se puede aplanar el óvalo y acortar la caja.
-4. Añadir redondeos y los detalles que faltan (apartado 1b).
-5. Si el usuario lo pide, llevar la v2 al repositorio (`BRIEF.md` y `parametros-fusion.csv`) y guardar el documento de Fusion en la nube.
+1. **Subir la v3 a GitHub** (lo hace el usuario o una sesión con permiso de escritura). Lista de ficheros en `reporte-v3/reporte-v3.md`, apartado 8.
+2. **Imprimir P0 y P1** y anotar el resultado. Después P2, P3 y P4.
+3. **Medir el reloj**: contorno interior del brazalete cerrado, ancho con corona, ancho por fuera de las asas, ancho y grosor del brazalete, grosor del cierre.
+4. Regenerar el modelo con los valores de las probetas y las medidas reales.
+5. Decisiones del usuario pendientes: fecha de entrega; aguja con pomo o plana; texto por dentro; aviso del imán en la tarjeta o en la web; si se mueven la v0 y la v1 a `archivo/`; si se guarda el documento de Fusion en la nube y con qué nombre.
 
 ## 14. Recursos
 
 - Reporte ilustrado de la v2 (13 figuras: secuencia de uso, vistas, explosionada, mecanismo, cortes, aguja, frase, mapa de imanes): documento de Claude en https://claude.ai/artifact/6rz71bxzmzG8sH2qDRZtQg y copia en la carpeta de trabajo, `reporte-v2\reporte-v2.pdf` (también `.html`, `.md` y las figuras sueltas). Las figuras se regeneran con las capturas de Fusion y un script de matplotlib; si cambia el modelo, hay que rehacerlas.
-- Generador del prototipo: `generador_caja_v2.py`, en este Proyecto y en la carpeta de trabajo (el de la v1 también se conserva)
+- Generador del prototipo: `generador_caja_v3.py`, **en la carpeta de trabajo** (en el Proyecto de Claude solo están copiados el de la v1 y el de la v2). Necesita `frase-v3.json` a su lado
+- Reporte de la v3: `reporte-v3/reporte-v3.md` y `.pdf`, con `guia-de-montaje.md` y `plan-de-pruebas.md`
+- Contra-reporte de la v2: `contra-reporte-v2.md`, en el repositorio y en la carpeta de trabajo
 - Carpeta de trabajo: `C:\Users\pepea\Documents\FusionClaude\WatchBox`
-- Repositorio de la caja: https://github.com/Pepe-a-d/eventually-caja (un commit, `0fda075`, sigue en v0)
+- Repositorio de la caja: https://github.com/Pepe-a-d/eventually-caja (en `4153169` a 19-nov-2026: v2 y contra-reporte; la v3 no está subida)
 - Repositorio de la web: https://github.com/Pepe-a-d/eventually
 - Web publicada: https://pepe-a-d.github.io/eventually/
 - Tarjeta en Figma: https://www.figma.com/design/zTqZch5frY3qcnWlQMConH
