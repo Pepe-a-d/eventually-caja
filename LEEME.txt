@@ -1,0 +1,40 @@
+EVENTUALLY - LA CAJA
+Carpeta de trabajo. Estado a 19 de noviembre de 2026: prototipo v2 (caja-expositor), sin imprimir.
+
+QUE HAY AQUI
+
+  Eventually-caja-v2.f3d      Modelo actual. Se abre en Fusion: Archivo > Abrir > Abrir desde mi equipo.
+  Eventually-caja-v2.step     El mismo modelo en formato STEP (lo abre Bambu Studio y cualquier CAD).
+  imprimir-v2\                Una pieza por fichero .3mf, para Bambu Studio:
+                              base, tapa, tapeta, rotor, aguja, soporte, funda, frase.
+                              "funda" y "frase" se cargan juntas; "frase" va en azul.
+  capturas\                   Imagenes del modelo (v1 y v2) y de la frase.
+  reporte-v2\                 Reporte ilustrado de la v2. Abre reporte-v2.pdf (17 paginas, 13 figuras).
+                              Tambien esta en .html y .md, con las figuras sueltas en .png.
+
+  generador_caja_v2.py        Script que construye el modelo v2 en Fusion. Todas las medidas estan dentro.
+  frase.json                  Contornos de la frase en Reenie Beanie. Lo necesita el generador.
+  parametros-fusion-v2.csv    Los 75 parametros del modelo v2.
+
+  README.md                   Portada del proyecto para GitHub.
+  contexto.md                 Estado completo del proyecto: decisiones, medidas, riesgos, pendientes.
+  BRIEF.md, parametros-fusion.csv, referencias\
+                              El brief original (v0) y sus imagenes. Punto de partida, ya superado.
+  instrucciones-de-trabajo.md Como se trabaja en este proyecto con Claude.
+
+  Eventually-caja-v1.f3d, Eventually-caja-v1.step, imprimir-v1\, generador_caja_v1.py
+                              Version anterior (caja que se abria por arriba). Archivada.
+
+GITHUB
+
+  Esta carpeta es una copia exacta de lo que debe ir al repositorio
+  https://github.com/Pepe-a-d/eventually-caja . A 19-nov-2026 la v2 aun NO esta subida.
+
+IMPORTANTE
+
+  - No cambies las medidas a mano en Fusion: no se actualizan las formas. Pide el cambio a Claude
+    y se regenera el modelo con el generador.
+  - Las medidas del reloj (corona, brazalete, cierre) son supuestos. Hay que medir el reloj montado
+    antes de imprimir la version final.
+  - Antes de imprimir la caja entera: imprimir solo tapa + rotor + tapeta + aguja para probar
+    que la llave magnetica funciona.

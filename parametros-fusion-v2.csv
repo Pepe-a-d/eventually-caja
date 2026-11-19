@@ -1,0 +1,75 @@
+reloj_diametro,mm,40 mm,Caja del reloj sin corona (ficha del vendedor)
+reloj_grosor,mm,11 mm,Del cristal a la tapa trasera (ficha del vendedor)
+reloj_asa_asa,mm,44 mm,De asa a asa (ficha del vendedor)
+reloj_ancho_corona,mm,43.5 mm,SUPUESTO: ancho total con corona. Medir
+brazalete_ancho,mm,27 mm,SUPUESTO: ancho del brazalete junto a la caja. Medir
+brazalete_grosor,mm,3.5 mm,SUPUESTO: grosor del brazalete. Medir
+tarjeta_largo,mm,85 mm,Tarjeta de autenticidad
+tarjeta_ancho,mm,55 mm,Tarjeta de autenticidad
+tarjeta_grosor,mm,0.5 mm,Cartulina de 300-350 g
+iman_d,mm,5 mm,Diametro del iman
+iman_h,mm,1.6 mm,Altura del iman
+iman_aloj_d,mm,iman_d + 0.15 mm,Alojamiento a presion
+iman_aloj_h,mm,iman_h + 0.2 mm,Fondo del alojamiento
+iman_retiro,mm,0.5 mm,Retiro extra de los imanes de esquina para suavizar el clic
+nfc_d,mm,25 mm,Etiqueta NFC
+nfc_aloj_d,mm,nfc_d + 0.6 mm,Rebaje del NFC en el techo de la funda
+nfc_aloj_h,mm,0.5 mm,Fondo del rebaje del NFC
+nfc_y,mm,27 mm,"v2: NFC hacia el fondo de la caja, lejos del reloj y de los imanes"
+holg_desliza,mm,0.3 mm,Holgura por lado entre funda y caja
+holg_tapa,mm,0.2 mm,Holgura por lado entre tapa y caja
+holg_presion,mm,0.15 mm,Holgura para encajes a presion
+pared,mm,3 mm,Paredes laterales y fondo de la caja
+pared_techo,mm,3.4 mm,"v2: techo y suelo de la caja: ranura del pestillo, rebaje e imanes del soporte"
+pared_funda,mm,2 mm,Pared de la funda
+funda_fondo,mm,3.8 mm,v2: fondo cerrado de la funda: rebaje de aguja + imanes
+soporte_largo,mm,60 mm,SUPUESTO: eje largo del ovalo del soporte. Ajustar al brazalete
+soporte_alto,mm,46 mm,SUPUESTO: eje corto del ovalo del soporte
+soporte_ancho,mm,30 mm,Ancho del soporte (sentido de la muneca)
+soporte_inclinacion,deg,25 deg,v2: cuanto se recuesta la esfera hacia atras respecto a la vertical
+soporte_pared,mm,4 mm,Grosor del anillo del soporte
+soporte_pie,mm,4.5 mm,Altura libre bajo el anillo para el brazalete
+soporte_rebaje,mm,1.2 mm,v2: rebaje del suelo donde encajan los patines
+soporte_iman_retiro,mm,1.2 mm,v2: retiro de los imanes del soporte para que salga sin arrastrar la caja
+patin_ancho,mm,8 mm,Ancho de cada patin lateral del soporte
+patin_alto,mm,14 mm,Altura de los patines
+patin_frente,mm,34 mm,"v2: del centro del anillo al frente del patin (bajo el reloj, para que no vuelque)"
+patin_detras,mm,22 mm,v2: del centro del anillo a la trasera del patin
+aire_frente,mm,5 mm,v2: aire entre la tapa y el punto mas adelantado del reloj
+guia_tarjeta,mm,2.5 mm,v2: saliente de las guias en cuna que sujetan la tarjeta al fondo
+guia_alto,mm,45 mm,v2: altura de las guias de la tarjeta
+nicho_ancho,mm,tarjeta_largo + 3 mm,v2: ancho interior de la caja
+nicho_alto,mm,72 mm,v2: alto interior de la caja
+nicho_fondo,mm,80 mm,"v2: fondo interior de la caja, de la tapa a la pared trasera"
+tapa_piel,mm,1 mm,Piel sobre el mecanismo. Bajar a 0.8 si el iman no arrastra
+rotor_grosor,mm,2.2 mm,Grosor del rotor
+rotor_holg_axial,mm,0.3 mm,Juego del rotor
+rotor_ancho,mm,9 mm,Ancho de la barra del rotor
+rotor_giro,deg,40 deg,v2: giro entre cerrado y abierto
+rotor_radio_iman,mm,13.5 mm,v2: del centro al iman de arrastre (va en la cola de la aguja)
+rotor_enganche,mm,1.3 mm,Cuanto entra cada pestillo del rotor en techo y suelo
+rotor_radio,mm,nicho_alto / 2 + rotor_enganche,"Radio del rotor, extremos redondeados"
+pestillo_grosor,mm,1.2 mm,Grosor del pestillo en cada extremo del rotor
+tapeta_grosor,mm,1 mm,Grosor de la tapeta
+tapeta_largo,mm,62 mm,Largo de la tapeta
+tapa_alto,mm,tapa_piel + rotor_grosor + rotor_holg_axial + tapeta_grosor + 0.1 mm,"Grosor de la tapa frontal, encastrada a ras"
+refuerzo_esq,mm,8.5 mm,Refuerzo de esquina para los imanes de la tapa
+caja_ancho,mm,nicho_ancho + 2 * pared,v2: exterior de la caja
+caja_alto,mm,nicho_alto + 2 * pared_techo,v2: exterior de la caja
+caja_fondo,mm,pared + nicho_fondo + tapa_alto,"v2: exterior de la caja, tapa incluida"
+aguja_punta,mm,34 mm,v2: del centro a la punta
+aguja_grosor,mm,2.4 mm,v2: grosor de la aguja-llave (era 3.2)
+aguja_cubo_d,mm,9 mm,v2: diametro del cubo (era 12)
+aguja_pala_d,mm,8.6 mm,"v2: diametro del disco de la cola, aloja el iman de arrastre"
+aguja_varilla,mm,2 mm,v2: ancho de la varilla junto al cubo
+aguja_varilla_punta,mm,1.2 mm,v2: ancho de la varilla junto a la flecha
+aguja_flecha_largo,mm,10 mm,v2: largo de la punta de flecha calada
+aguja_flecha_ancho,mm,6.5 mm,v2: ancho de la punta de flecha
+aguja_flecha_pared,mm,1 mm,v2: grosor del contorno de la flecha
+aguja_rebaje,mm,1.4 mm,v2: profundidad del rebaje de la aguja en la funda
+funda_largo,mm,caja_ancho + holg_desliza + funda_fondo,Exterior de la funda (un extremo abierto)
+funda_ancho,mm,caja_fondo + 2 * holg_desliza + 2 * pared_funda,Exterior de la funda
+funda_alto,mm,caja_alto + 2 * holg_desliza + 2 * pared_funda,Exterior de la funda
+frase_fondo,mm,0.6 mm,Profundidad de la frase incrustada
+frase_trazo_min,mm,0.8 mm,Trazo minimo imprimible de la letra
+frase_margen,mm,11 mm,v2: margen de la frase desde la esquina superior izquierda del frente de la funda

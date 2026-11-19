@@ -1,5 +1,10 @@
 # Eventually — la caja
 
+> **Este es el brief original (v0), del 19 de noviembre de 2026. Se conserva como punto de partida.**
+> El diseño ha cambiado desde entonces: la caja ya está modelada y ahora se abre por delante (v2).
+> El estado actual está en [`contexto.md`](contexto.md) y en [`reporte-v2/reporte-v2.pdf`](reporte-v2/reporte-v2.pdf).
+> Las medidas de este documento y de `parametros-fusion.csv` ya no son las vigentes; las vigentes están en `parametros-fusion-v2.csv`.
+
 Documento para retomar el diseño de la caja en Fusion desde otro ordenador.
 Estado: **concepto cerrado, nada modelado.** Las medidas son una primera propuesta (v0)
 y están todas en `parametros-fusion.csv` para poder cambiarlas.
