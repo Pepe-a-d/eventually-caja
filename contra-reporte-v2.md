@@ -27,7 +27,8 @@ que todavía no se puede usar.
 - **Se han modelado tres versiones sin imprimir una sola pieza.** La v3 no debería
   empezar en Fusion, sino en la impresora, con cinco probetas pequeñas.
 
-- **La v2 no se puede montar con lo que hay**: pide 24 imanes y Pepe tiene 14.
+- **La v2 no se puede montar con lo que hay**: pide 24 imanes y Pepe tiene 14, sin chapas
+  de acero.
 
 Hay 6 fallos graves, 11 importantes y una lista de defectos del propio report. Al final
 va la especificación de la v3 y el plan de pruebas.
@@ -189,12 +190,16 @@ girada, meter el panel con la otra mano y devolverla. El report lo resume en una
 **Qué pasa.** Ver 3.3. Nada devuelve el rotor a cerrado ni lo mantiene ahí. En el
 transporte queda donde caiga.
 
-**Para la v3.** Un **retén magnético**: una chapita de acero fija en el panel, detrás de
-la posición de cerrado, que atrae al imán del rotor. No tiene polaridad y no ocupa.
-- Par objetivo: en torno a 1 mN·m. Es 40 veces el rozamiento y la octava parte de lo que
-  tira la aguja.
-- Se ajusta con la distancia de la chapita. Va en la probeta.
-- Da, de paso, el clic de cerrado que pedía el brief y la v2 no lleva.
+**Para la v3.** Un **muelle impreso**: un brazo fino de plástico, parte del propio rotor,
+que apoya en un tetón del panel y lo empuja hacia cerrado. Ni acero ni imán.
+- Par objetivo: en torno a 1 mN·m con el rotor abierto. Es 40 veces el rozamiento y la
+  octava parte de lo que tira la aguja.
+- Se ajusta con el grosor del brazo (0,6 a 1,0 mm). Va en la probeta P2.
+- **En cerrado queda relajado.** El plástico solo trabaja mientras la aguja lo tiene
+  abierto, así que no cede con el tiempo.
+- La aguja puesta lo sujeta abierto: su rozamiento contra el panel es unas seis veces el
+  par del muelle (**estimado**: 6,5 frente a 1 mN·m). Giras, sueltas y tiras del panel.
+- **Al quitar la aguja, el pestillo vuelve solo a cerrado.** Quitar la llave echa el cierre.
 
 ### G4. Si el pestillo se atasca, la caja no se abre
 
@@ -249,7 +254,8 @@ Giras 40°, no suena nada, el panel no se mueve, y hay que hurgar con la uña en
 lateral contra 5,4 N. Para una caja que quiere parecer cara, es el peor momento.
 
 **Para la v3.**
-- Clic al llegar a abierto: un segundo retén al final del recorrido.
+- Un tope de final de recorrido que se note en la mano. La aguja se queda donde la dejes
+  y mantiene el pestillo abierto (G3).
 - Fuera la muesca lateral. En su lugar, un **bisel a todo lo ancho bajo el borde inferior
   del panel**, una línea de sombra donde entra la yema del dedo.
 - Bajar la sujeción del panel de 5,4 N a unos 2 N: dos imanes en vez de cuatro, o más
@@ -295,31 +301,33 @@ de una caja de móvil.
   dos en la pared izquierda. Rompen la regla «todo blanco y liso».
 - 24 imanes con polaridad son 24 ocasiones de pegar uno al revés.
 
-**Para la v3: presupuesto de 14.** La clave es que una pareja no necesita dos imanes: un
-imán contra una **chapita de acero** también se atrae, no tiene polaridad y no gasta imán.
-Sirve una arandela M3, la cabeza de una chincheta o un trozo de clip. Tiene que ser acero
-que se pegue a un imán; el inoxidable corriente no vale.
+**Para la v3: presupuesto de 14, solo con imanes.** Pepe no tiene chapas de acero, así
+que no se cuenta con ellas. Donde la v2 ponía un imán para sujetar algo, la v3 usa la
+forma de la pieza.
 
-| Función | Imanes | Acero | Notas |
-| --- | --- | --- | --- |
-| Aguja: cubo y cola | 2 | | |
-| Panel: imán central fijo | 1 | | centra la aguja |
-| Rotor, simétrico (I11) | 2 | | con uno solo también funciona |
-| Retenes de cerrado y abierto (G3) | | 2 | nunca fueron imanes |
-| Sujeción del panel | 2 | 2 | imán en el panel, chapa en la caja |
-| Aguja guardada en la caja | | 2 | la aguja ya lleva sus dos imanes |
-| Funda de campana | | | sin imanes: baja por el colchón de aire |
-| Peana del soporte | | | encaja por forma |
-| **Caja completa** | **7** | **6** | |
-| Aguja de repuesto | 2 | | |
-| **Total con un repuesto** | **9** | **6** | **quedan 5 de reserva** |
+| Función | Imanes | Cómo se resuelve |
+| --- | --- | --- |
+| Aguja: cubo y cola | 2 | |
+| Panel: imán central fijo | 1 | centra la aguja |
+| Rotor | 1 | en el brazo de abajo, como en la v2 |
+| Sujeción del panel | 4 | dos parejas, en esquinas opuestas |
+| Retorno del pestillo | 0 | muelle impreso (G3) |
+| Aguja guardada | 0 | rebaje a ras en la cara de arriba; la funda la tapa |
+| Funda de campana | 0 | baja por el colchón de aire |
+| Peana del soporte | 0 | encaja por forma |
+| Panel al derecho | 0 | una esquina achaflanada (I11) |
+| **Caja completa** | **8** | |
+| Aguja de repuesto | 2 | |
+| **Total con un repuesto** | **10** | **quedan 4 de reserva** |
 
-Con la reserva se puede dar clic magnético a la peana (2 imanes y 2 chapas) y aún sobran 3
-para roturas.
+Con la reserva se puede, por orden de utilidad: dar un clic a la aguja guardada (1), hacer
+el rotor simétrico (1) y dar un clic a la peana (2).
 
-Fuerza de un imán contra acero (**estimada**, por el método de la imagen): la de dos
-imanes al doble de separación. A 0,7 mm de una chapa gruesa, unos 1,3 N; con chapa fina,
-menos. Dos puntos dan en torno a 2 N, que es justo la sujeción que pide I1.
+Dos parejas a 1,4 mm sujetan el panel con 2,7 N (**calculado**), cerca de los 2 N que
+pide I1. Si queda duro, se retiran 0,3 mm más.
+
+Nota: las monedas de 1, 2 y 5 céntimos de euro son de acero y se pegan a un imán. Si en
+algún punto falta un imán, una moneda embutida hace de pareja. No se cuenta con ello.
 
 Además:
 - Los que queden en caras vistas, metidos con pausa de impresión bajo 0,4 mm de plástico.
@@ -372,9 +380,12 @@ pasa a unos 26°, con 24° de margen para el retraso de la aguja.
 
 ### I11. El panel se puede montar boca abajo
 
-El report propone resolverlo invirtiendo polaridades, que añade riesgo al montaje. Mejor:
-**rotor simétrico, con imán en los dos brazos**. La cola de la aguja engancha el que
-quede abajo y da igual cómo se monte. Cuesta un imán.
+El report propone resolverlo invirtiendo polaridades, que añade riesgo al montaje y no
+impide nada: solo hace que el panel no se pegue. Mejor por forma: **una esquina del panel
+y de la boca achaflanada**, como una tarjeta SIM. Solo entra de una manera y no gasta imán.
+
+Si sobra un imán de la reserva, la alternativa es un rotor simétrico, con imán en los dos
+brazos: entonces da igual cómo se monte.
 
 ## 6. Fallos del report y del proceso
 
@@ -407,7 +418,7 @@ y cambiar funda, soporte, pestillo y sitio de la aguja y de la tarjeta. Es lo qu
 el apartado 8.
 
 **B. Parche mínimo, si el plazo aprieta.** La v2 con seis cambios: soporte en dos piezas
-(G1), chaflán y retén (G2, G3), taladro de emergencia (G4), aguja dentro (G6), tarjeta en
+(G1), chaflán y muelle (G2, G3), taladro de emergencia (G4), aguja dentro (G6), tarjeta en
 el panel (G5) e imanes de la aguja tapados (I6). Se queda grande y con la frase gorda,
 pero se puede regalar.
 
@@ -420,13 +431,13 @@ espera: la aguja con eje pasante y rampa helicoidal. Se pierde el panel sin aguj
 
 1. Soporte en dos piezas: pinza en C elástica y peana. Hueco de 8 mm para el cierre.
 2. Pestillo de resbalón: chaflán en los extremos del rotor y entrada guiada en la boca.
-3. Retén de chapa de acero en cerrado y en abierto. Quitar el «cierre por gravedad».
+3. Muelle impreso que devuelve el pestillo a cerrado. Quitar el «cierre por gravedad».
 4. Taladro de emergencia de 1,5 mm sobre el rotor. Tapeta desmontable, sin pegamento.
 5. Aguja guardada en la cara superior de la caja interior, a ras.
 6. Tarjeta en carriles en U: en el interior del panel o delante del soporte.
 7. Imanes de la aguja embutidos; cola en pala; varilla de 1,6 mm como mínimo.
 8. Enganche de 2 mm, juego del eje de 0,15 mm, giro de 50°.
-9. Rotor simétrico, con dos imanes.
+9. Una esquina del panel achaflanada, para que solo entre al derecho.
 10. Reloj de referencia completo: cabeza, corona, brazalete y cierre.
 
 **Recomendado**
@@ -436,8 +447,8 @@ espera: la aguja con eje pasante y rampa helicoidal. Se pierde el panel sin aguj
 13. Bisel de apertura a todo lo ancho. Fuera la muesca lateral.
 14. Piel de 1,4 mm con relleno opaco.
 15. Sujeción del panel en torno a 2 N.
-16. **14 imanes como máximo** (pasa a imprescindible): 7 en la caja, 2 en la aguja de
-    repuesto y 5 de reserva. Chapitas de acero donde no haga falta polaridad. Ninguno a la vista.
+16. **14 imanes como máximo, y solo imanes** (pasa a imprescindible): 8 en la caja, 2 en
+    la aguja de repuesto y 4 de reserva. Ninguno a la vista.
 17. Fuera el panel aparcado.
 18. Redondeos: 1 mm en aristas exteriores, 0,5 mm en las de la boca.
 19. Todos los números del generador, a `P_DEF`.
@@ -457,13 +468,13 @@ Cinco probetas pequeñas, cada una con su criterio.
 | --- | --- | --- | --- |
 | P0 | Tolerancias | Una tira con alojamientos de imán de 5,05 a 5,30 mm, encajes de 0,10 a 0,35 mm y chapas de 0,8 / 1,0 / 1,2 / 1,4 mm con un imán detrás | Se elige un alojamiento que entra a presión con el dedo, una holgura que desliza sin bailar y un grosor de piel que no deja ver el imán |
 | P1 | Llave | Panel, rotor, tapeta y aguja de la v2, con la piel elegida en P0 | La aguja arrastra el rotor 10 de 10 veces, de pie, tumbada y boca abajo, con menos de 10° de retraso |
-| P2 | Resbalón | Un aro de 15 mm de la boca de la caja, y el panel con rotor achaflanado y retén | El panel cierra de un empujón 20 de 20 veces y no sale sin aguja. Agitado un minuto, sigue cerrado |
+| P2 | Resbalón | Un aro de 15 mm de la boca de la caja, y el panel con rotor achaflanado y muelle impreso, en tres grosores de brazo | El panel cierra de un empujón 20 de 20 veces y no sale sin aguja. Agitado un minuto, sigue cerrado. Al quitar la aguja, el pestillo vuelve solo |
 | P3 | Soporte | Pinza en C y peana | El reloj real se monta con una mano, no gira y no vuelca con un golpe en la mesa |
 | P4 | Funda | Un tramo de 40 mm de campana, con la frase en la cara de cama y el NFC | La letra se lee fina. La funda baja sola y despacio. El móvil lee el NFC con el reloj dentro |
 
 P0 y P1 se pueden imprimir hoy con lo que hay. P1 decide si se sigue por A o por C.
 
-Las cinco probetas usan como mucho 5 imanes a la vez. Como no se pegan, son los mismos
+Las cinco probetas usan como mucho 8 imanes a la vez. Como no se pegan, son los mismos
 que luego van a la caja.
 
 ## 10. Lo que solo puedes responder tú

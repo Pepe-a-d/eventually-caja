@@ -116,7 +116,7 @@ La caja es más profunda que la v1 (87,6 mm frente a 64) porque el reloj va de p
 | Tarjeta | Certificado de autenticidad, 85 × 55 mm, cartulina de 300–350 g. Anverso: «Late Edition · 1 of 1», «Eventually», «Llegará. Cuando llegue.» Reverso: ficha, «Montado a mano para Pablo. Pepe» y el QR. Diseño en Figma: https://www.figma.com/design/zTqZch5frY3qcnWlQMConH |
 | QR | `referencias/qr.svg`, 33 módulos, azul `#1F3FA8`. **Comprobado**: lleva a https://pepe-a-d.github.io/eventually/ |
 | NFC | Etiqueta de 25 mm de diámetro que lleva a la web. El usuario la tiene. |
-| Imanes | Discos de 5 × 1,6 mm. **Tiene 14 contados** (y alguno suelto más), dato del 19-nov-2026 que corrige el «de sobra» anterior. La v2 usa 24: no se puede montar. La v3 debe salir con 14 como máximo; ver `contra-reporte-v2.md`, apartado I4. |
+| Imanes | Discos de 5 × 1,6 mm. **Tiene 14 contados** (y alguno suelto más), dato del 19-nov-2026 que corrige el «de sobra» anterior. **No tiene chapas de acero**: el diseño solo puede contar con imanes. La v2 usa 24: no se puede montar. La v3 debe salir con 14 como máximo; ver `contra-reporte-v2.md`, apartado I4. |
 
 ## 3. El concepto y las decisiones cerradas
 
