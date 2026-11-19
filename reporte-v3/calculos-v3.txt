@@ -1,0 +1,12 @@
+separacion aguja-rotor 2.0 mm -> atraccion 0.89 N | aguja-central 2.2 mm -> 0.78 N | esquinas 1.6 mm -> 1.16 N cada una, 2.3 N las dos (hasta 3.1 N si los imanes se acercan 0,2 mm en su alojamiento)
+arrastre lateral maximo 0.43 N con 2.50 mm de desfase (atraccion ahi 0.39 N) -> par 6.9 mN·m en un brazo de 16 mm; rozamiento del rotor en ese punto (mu 0,3) 1.9 mN·m; quedan 5.0
+rozamiento que sujeta la aguja girada (mu 0,3): 5.0 mN·m
+espiral: largo util 76 mm; par a 50 grados con E = 3000 MPa: 0.45 mm -> 0.42 mN·m, 0.60 mm -> 1.00 mN·m, 0.80 mm -> 2.36 mN·m; deformacion maxima 0.35 %
+campo en el centro del movimiento: iman central a 17.2 mm -> 908 A/m (limite ISO 764: 4800, 5.3 veces por debajo); con la aguja puesta 1412 A/m (3.4 veces por debajo)
+enganche: 2.00 mm a 0 grados; por encima de 1 mm entre -8.0 y 18.5 grados; resbalon 13.7, apertura 24.1
+exterior con funda 98.6 x 74.9 x 94.4 mm = 697 cm3 (v2: 98.1 x 92.2 x 83.4 = 754 cm3)
+brazalete de 160 mm: alto interior necesario 73.9 mm, fondo 59.5 mm -> exterior con funda 98.6 x 73.1 x 84.6
+brazalete de 170 mm: alto interior necesario 78.8 mm, fondo 60.4 mm -> exterior con funda 98.6 x 74.0 x 89.5
+brazalete de 180 mm: alto interior necesario 83.7 mm, fondo 61.3 mm -> exterior con funda 98.6 x 74.9 x 94.4
+brazalete de 190 mm: alto interior necesario 88.6 mm, fondo 62.1 mm -> exterior con funda 98.6 x 75.7 x 99.3
+brazalete de 200 mm: alto interior necesario 93.6 mm, fondo 63.0 mm -> exterior con funda 98.6 x 76.6 x 104.3
