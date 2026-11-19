@@ -1,0 +1,54 @@
+reloj_diametro,mm,40 mm,Caja del reloj sin corona (ficha del vendedor)
+reloj_grosor,mm,11 mm,Del cristal a la tapa trasera (ficha del vendedor)
+reloj_asa_asa,mm,44 mm,De asa a asa (ficha del vendedor)
+reloj_ancho_corona,mm,43.5 mm,SUPUESTO: ancho total con corona. Medir
+brazalete_ancho,mm,27 mm,SUPUESTO: ancho del brazalete junto a la caja. Medir
+brazalete_grosor,mm,3.5 mm,SUPUESTO: grosor del brazalete. Medir
+tarjeta_largo,mm,85 mm,Tarjeta de autenticidad
+tarjeta_ancho,mm,55 mm,Tarjeta de autenticidad
+tarjeta_grosor,mm,0.5 mm,Cartulina de 300-350 g
+iman_d,mm,5 mm,Diametro del iman
+iman_h,mm,1.6 mm,Altura del iman
+iman_aloj_d,mm,iman_d + 0.15 mm,Alojamiento a presion
+iman_aloj_h,mm,iman_h + 0.2 mm,Fondo del alojamiento
+nfc_d,mm,25 mm,Etiqueta NFC
+nfc_aloj_d,mm,nfc_d + 0.6 mm,Rebaje del NFC en el techo de la funda
+nfc_aloj_h,mm,0.5 mm,Fondo del rebaje del NFC
+holg_desliza,mm,0.3 mm,Holgura por lado entre funda y base
+holg_tapa,mm,0.2 mm,Holgura por lado entre tapa y base
+holg_presion,mm,0.15 mm,Holgura para encajes a presion
+pared,mm,2.4 mm,Pared de la base
+suelo,mm,2.4 mm,Suelo de la base
+pared_funda,mm,2 mm,Pared de la funda
+soporte_largo,mm,60 mm,SUPUESTO: eje largo del ovalo del soporte. Ajustar al brazalete
+soporte_alto,mm,46 mm,SUPUESTO: eje corto del ovalo del soporte
+soporte_ancho,mm,30 mm,Ancho del soporte (sentido de la muneca)
+soporte_inclinacion,deg,25 deg,Inclinacion de la cara de apoyo para la mesilla
+cav_largo,mm,tarjeta_largo + 3 mm,Cavidad interior de la base
+cav_ancho,mm,tarjeta_ancho + 3 mm,Cavidad interior de la base
+cav_alto,mm,soporte_alto + brazalete_grosor + reloj_grosor + 7.5 mm,Cavidad interior: soporte + brazalete + reloj + tarjeta + aire
+ranura_tarjeta_h,mm,1.2 mm,Fondo de la ranura de la tarjeta
+base_largo,mm,cav_largo + 2 * pared,Exterior de la base
+base_ancho,mm,cav_ancho + 2 * pared,Exterior de la base
+base_alto,mm,cav_alto + suelo,Exterior de la base sin tapa
+tapa_piel,mm,1 mm,Piel sobre el mecanismo. Bajar a 0.8 si el iman no arrastra
+tapa_alto,mm,6 mm,Altura total de la tapa
+tapa_faldon,mm,3 mm,Faldon de centrado que entra en la base
+rotor_radio_iman,mm,20 mm,Distancia del centro al iman de arrastre
+labio_saliente,mm,2 mm,Cuanto sobresale cada labio hacia dentro
+rotor_largo,mm,cav_ancho - 1 mm,Largo del rotor: gira libre en la cavidad y sus extremos entran 1.5 mm bajo cada labio
+rotor_ancho,mm,9 mm,Ancho de la barra del rotor
+rotor_grosor,mm,2.2 mm,Grosor del rotor
+rotor_holg_axial,mm,0.3 mm,Juego vertical del rotor
+rotor_giro,deg,60 deg,Giro entre cerrado y abierto
+labio_arco,deg,30 deg,Arco que cubre cada labio de la base
+aguja_punta,mm,30 mm,Del centro a la punta
+aguja_cola,mm,14 mm,Del centro al final del contrapeso
+aguja_grosor,mm,3.2 mm,Grosor de la aguja-llave
+aguja_cubo_d,mm,12 mm,Diametro del cubo
+aguja_varilla,mm,2.4 mm,Ancho de la varilla
+funda_largo,mm,base_largo + holg_desliza + pared_funda,Exterior de la funda (un extremo abierto)
+funda_ancho,mm,base_ancho + 2 * holg_desliza + 2 * pared_funda,Exterior de la funda
+funda_alto,mm,base_alto + tapa_alto + 2 * holg_desliza + 2 * pared_funda,Exterior de la funda
+frase_fondo,mm,0.6 mm,Profundidad de la frase incrustada
+frase_trazo_min,mm,0.8 mm,Trazo minimo imprimible de la letra
