@@ -13,6 +13,8 @@ Impresa y probada por Pepe en la Bambu Lab X1 Carbon. Ficheros de `probetas-v4\`
 | Piel | Con **0,8 mm**, la más fina, ya no se ve la sombra del imán | `tapa_piel` = 1,4 mm | No (ver notas) |
 | Imán embutido con pausa | Se quedó en su sitio al reanudar | — | No |
 
+**Ojo: P0 se imprimió con el perfil «0.08mm Extra Fine» de Bambu Studio** (capa de 0,08 mm), no con la capa de 0,2 mm que piden la guía y el resto de las piezas. Los resultados de arriba valen para 0,08 mm. Con 0,2 mm los encajes pueden salir algo más justos. Para cerrarlo, P0 se repite a 0,2 mm en la misma bandeja que P1 y P2, con los mismos ajustes.
+
 **Sin probar:** la fuerza del imán embutido frente a uno suelto (la prueba de los clips). Pepe decidió no hacerla. Queda sin saber si el calor de la impresión le quita fuerza.
 
 ### Notas (interpretación de la sesión del Mac)
