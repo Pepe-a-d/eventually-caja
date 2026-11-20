@@ -17,7 +17,16 @@ Impresa y probada por Pepe en la Bambu Lab X1 Carbon. Ficheros de `probetas-v4\`
 
 **Sin probar:** la fuerza del imán embutido frente a uno suelto (la prueba de los clips). Pepe decidió no hacerla. Queda sin saber si el calor de la impresión le quita fuerza.
 
-### Notas (interpretación de la sesión del Mac)
+## P1. La llave magnética (20 de noviembre de 2026): NO VALE
+
+Impresa y probada por Pepe. En sus palabras: «los imanes no son ni de cerca lo suficientemente fuertes como para mover el mecanismo».
+
+- **La aguja no arrastra el rotor.** Era el riesgo R1 del brief original y el que los contra-reportes dejaron «para las probetas».
+- **Los cálculos lo daban por bueno** (0,89 N entre aguja y rotor, 6,9 mN·m de arrastre). Estaban equivocados o eran demasiado optimistas. Ningún otro cálculo de fuerza de imanes de este repositorio debe darse por válido sin medirlo.
+- **Faltan los detalles:** si la aguja se pega al centro, si el rotor gira bien con el dedo, con qué espiral se probó.
+- **Decisión de Pepe:** volver a la fase de diseño de la caja, con lluvia de ideas separada en forma, mecanismo y estética. La v4.1 queda parada.
+
+## Notas sobre P0 (interpretación de la sesión del Mac)
 
 - **El modelo es más holgado de lo que la impresora necesita.** El plan pedía `holg_tapa` = la ventana más justa que pasa (0,15) y `holg_desliza` una más (0,20). El modelo lleva 0,20 y 0,30. No se cambia: el panel entra seguro. Si en P2 el panel baila en la boca, hay margen para bajar a 0,15.
 - **`holg_presion` = 0,15 mm no aprieta en esta impresora:** con 0,15 la barrita pasa sin forzar. Un encaje que tenga que sujetar por presión necesita 0,10. Hoy solo afecta al contorno de la tapa trasera, que no se sujeta por presión sino con su pestaña (y cinta en P1, porque el clip no retiene: contra-reporte v4.1, I1).
