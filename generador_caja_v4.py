@@ -1,4 +1,6 @@
-# Eventually, la caja: generador del prototipo v4 para Autodesk Fusion.
+# Eventually, la caja: generador del prototipo v4 para Autodesk Fusion. PARCHE v4.1 (20-nov-2026):
+# corrige lo que senala contra-reporte-v4.md (ranura de emergencia, taco del muelle, puntas del rotor,
+# tapa trasera, retenes de peana y funda).
 # Responde al contra-reporte de la v3 (contra-reporte-v3.md): rotor de un solo sentido con tope y muelle
 # precargado, puentes tras los pestillos, peana corredera, pinza a medida, reten de la funda. Se ejecuta dentro de Fusion
 # (API de Python). Crea los parametros de usuario y reconstruye todo desde cero.
@@ -41,7 +43,7 @@ P_DEF = [
 ('iman_h','mm','1.6 mm','Altura del iman'),
 ('iman_aloj_d','mm','iman_d + 0.15 mm','Alojamiento a presion. Ajustar con la probeta P0'),
 ('iman_aloj_h','mm','iman_h + 0.2 mm','Alto del alojamiento (9 capas de 0.2)'),
-('iman_cubierta','mm','1.3 mm','I5: plastico sobre los imanes de esquina. Entre los dos dan 1.2 N, para que la aguja haga de tirador'),
+('iman_cubierta','mm','1.8 mm','v4.1 (I3): plastico sobre los imanes de esquina. Entre los dos dan 0.7 N: la aguja saca el panel tirando del centro'),
 ('iman_central_retiro','mm','0.4 mm','I5: retiro del iman central respecto a la piel'),
 ('nfc_d','mm','25 mm','Etiqueta NFC'),
 ('nfc_aloj_d','mm','nfc_d + 0.6 mm','Rebaje del NFC bajo el techo de la funda'),
@@ -51,7 +53,7 @@ P_DEF = [
 ('holg_tapa','mm','0.2 mm','Holgura por lado del panel en la boca, y de la peana en su rebaje'),
 ('holg_presion','mm','0.15 mm','Holgura para encajes a presion (tapeta, ancla del muelle)'),
 ('holg_giro','mm','0.3 mm','Holgura lateral del rotor en su camara y en las ranuras'),
-('holg_corte','mm','0.15 mm','Margen de las ranuras del pestillo hacia delante y hacia atras'),
+('holg_corte','mm','0.35 mm','v4.1 (I4): margen de las ranuras del pestillo; el labio de la caja es un puente y descuelga'),
 ('rotor_holg_eje','mm','0.15 mm','I10: juego radial del rotor en su eje'),
 ('rotor_holg_axial','mm','0.3 mm','Juego del rotor entre piel y tapeta'),
 # --- paredes y redondeos ---
@@ -85,13 +87,16 @@ P_DEF = [
 ('bandeja_grosor','mm','2.4 mm','Grosor de la base de la peana, encastrada en el suelo'),
 ('bandeja_margen','mm','2 mm','Lo que la base sobresale por delante y por detras de las cunas'),
 ('bandeja_oreja','mm','4 mm','G3: largo de las orejas de la base que pasan el reten'),
-('bandeja_estrecho','mm','0.4 mm','G3: lo que la base se estrecha por lado entre orejas'),
 ('guia_pared','mm','2 mm','G3: pared de cada guia de la peana corredera'),
 ('guia_labio','mm','1.2 mm','G3: grosor del labio que impide que la peana se levante'),
 ('guia_solape','mm','2 mm','G3: lo que el labio pisa la base'),
 ('guia_holg','mm','0.25 mm','G3: holgura entre la base y el labio'),
 ('guia_frente','mm','3 mm','G3: lo que las guias sobresalen por delante de la peana'),
-('reten_alto','mm','0.35 mm','G3: resalte de cada guia que retiene la peana al fondo'),
+('guia_chaflan','mm','1.5 mm','v4.1 (I8): chaflan de entrada de las guias'),
+('lengueta_largo','mm','12 mm','v4.1 (I1): lengueta elastica de la base de la peana, a cada lado'),
+('lengueta_grosor','mm','1.2 mm','v4.1 (I1): grosor de la lengueta'),
+('lengueta_ranura','mm','0.8 mm','v4.1 (I1): ranura que libera la lengueta'),
+('lengueta_resalte','mm','0.6 mm','v4.1 (I1): resalte redondo en la punta, que cae en una muesca de la guia'),
 ('aire_frente','mm','3 mm','Aire entre los carriles de la tarjeta y el cristal del reloj'),
 ('aire_arriba','mm','1.5 mm','Punto 15: aire entre el brazalete y el techo (la peana ya no se levanta)'),
 ('hueco_cierre','mm','8 mm','G1: hueco libre para el cierre detras de la pinza'),
@@ -117,6 +122,13 @@ P_DEF = [
 ('tapeta_x','mm','38.5 mm','I3: semiancho de la tapa trasera, que cubre toda la camara'),
 ('tapeta_corte','mm','8.5 mm','I3: esquinas cortadas de la tapa trasera, para librar los imanes'),
 ('puente','mm','6.5 mm','I2: alto de la banda maciza que queda detras de cada pestillo'),
+('tapeta_pestana','mm','2 mm','v4.1 (I5): pestana de la tapa trasera que entra bajo la banda de arriba'),
+('tapeta_pestana_ancho','mm','18 mm','v4.1 (I5): ancho de la pestana'),
+('tapeta_pestana_x','mm','-19 mm','v4.1 (I5): posicion de la pestana'),
+('tapeta_clip_largo','mm','12 mm','v4.1 (I5): lengueta-clip del borde de abajo de la tapa trasera'),
+('tapeta_clip_ancho','mm','1.5 mm','v4.1 (I5): ancho de esa lengueta'),
+('tapeta_clip_resalte','mm','0.5 mm','v4.1 (I5): resalte del clip'),
+('tapeta_clip_x','mm','10 mm','v4.1 (I5): posicion del clip'),
 ('llave_d','mm','4 mm','I7: resalte por detras del panel para que solo entre al derecho'),
 ('llave_h','mm','1.6 mm','I7: alto de ese resalte'),
 ('tapa_holg_tapeta','mm','0.1 mm','Lo que la tapeta queda hundida respecto a la cara trasera del panel'),
@@ -134,12 +146,15 @@ P_DEF = [
 ('muelle_radio_ext','mm','11.6 mm','G3: radio exterior de la espiral'),
 ('muelle_holgura','mm','0.6 mm','Hueco entre la espiral y el alma del rotor (puente de impresion)'),
 ('rotor_alma','mm','rotor_grosor - muelle_alto - muelle_holgura','Grosor del alma que une cubo y brazos por encima de la espiral'),
-('muelle_ancla_largo','mm','3.2 mm','Largo del taco que ancla la espiral al panel'),
-('muelle_ancla_ancho','mm','3 mm','Ancho del taco de anclaje'),
+('muelle_ancla_largo','mm','4 mm','Largo del taco que ancla la espiral al panel'),
+('muelle_ancla_ancho','mm','4.4 mm','Ancho del taco de anclaje'),
 ('muelle_precarga','deg','18 deg','I1: giro con que la espiral queda cargada contra el tope'),
-('muelle_ancla_ang','deg','13 deg','Posicion de la muesca del taco, por debajo de la horizontal izquierda'),
+('muelle_ancla_ang','deg','9 deg','Posicion de la muesca del taco, por debajo de la horizontal izquierda'),
 ('muelle_montaje','deg','45 deg','I2: giro al que se mete el rotor, donde no hay puente'),
-('ancla_diente','mm','0.7 mm','Diente de trinquete que retiene el taco con la precarga'),
+('ancla_teton_d','mm','1.8 mm','v4.1 (G2): teton del panel en el que entra el ojo del taco; lo sujeta en todas direcciones'),
+('ancla_teton_h','mm','1 mm','v4.1 (G2): lo que el teton entra en el taco (hay que levantar el taco para montarlo)'),
+('ancla_ojo_d','mm','2.2 mm','v4.1 (G2): ojo del taco'),
+('rotor_rebaje','mm','0.4 mm','v4.1 (I4): rebaje de las puntas del rotor por detras, bajo los puentes del panel'),
 ('art_barra','mm','27.5 mm','Rotor articulado: radio donde acaba la barra rigida'),
 ('art_codo','mm','7.5 mm','Rotor articulado: largo del codo lateral'),
 ('art_codo_alto','mm','4 mm','Rotor articulado: alto del codo'),
@@ -190,7 +205,7 @@ P_DEF = [
 ('frase_fondo','mm','0.6 mm','Profundidad de la frase: 3 capas de 0.2'),
 ('frase_margen','mm','14 mm','Del borde delantero del techo de la funda a la frase'),
 ('reten_funda_r','mm','1.5 mm','I4: radio de los dos nervios de la caja que retienen la funda'),
-('reten_funda_sale','mm','0.5 mm','I4: lo que sobresale cada nervio'),
+('reten_funda_sale','mm','0.8 mm','v4.1 (I2): lo que sobresale cada nervio (aprieto de 0.2 mm ya asentada)'),
 ('reten_funda_rebaje','mm','0.3 mm','I4: fondo del rebaje de la funda donde descansa el nervio'),
 ('reten_funda_z','mm','6 mm','I4: altura de los nervios sobre la mesa'),
 ('reten_funda_largo','mm','30 mm','I4: largo de cada nervio'),
@@ -387,7 +402,8 @@ def D():
     d['Rc'] = d['rA'] + p['holg_giro']
     d['lente'] = math.sqrt(max(d['Rc'] ** 2 - (d['ch'] / 2) ** 2, 0.0))
     d['a1'], d['a2'] = 0.0, p['rotor_giro']
-    d['gn'] = 180.0 + p['muelle_ancla_ang']                  # angulo de la muesca del taco
+    d['gn'] = 180.0 + p['muelle_ancla_ang']                  # angulo del teton del taco
+    d['rojo'] = p['muelle_radio_ext'] + p['muelle_ancla_largo'] - p['ancla_ojo_d'] / 2 - 0.9     # radio del ojo del taco
     # mundo
     d['yF'] = -d['Do'] / 2 + p['tapa_alto']
     d['yB'] = d['Do'] / 2 - p['pared']
@@ -493,7 +509,7 @@ def build_base():
     # G4: ranura de emergencia en la base, sobre el recorrido del pestillo de abajo (se arrastra de lado con un clip)
     ye = Do / 2 - (d['cb'] + p['rotor_grosor'] / 2)
     xa = -(d['rA'] * math.sin(d['tk']) + d['hw'] + 1)
-    cut(b, box(xa, d['hw'] + 2.5, ye - p['emergencia_d'] / 2, ye + p['emergencia_d'] / 2, -1, zf - (d['Rc'] - ch / 2) + EPS))
+    cut(b, box(xa, d['hw'] + 2.5, ye - p['emergencia_d'] / 2, ye + p['emergencia_d'] / 2, -1, zf + EPS))                    # v4.1: pasante hasta la cara de arriba del suelo
     # bisel de apertura bajo el panel, a los dos lados de la zona del pestillo
     bi = p['bisel']
     for sx in (1, -1):
@@ -512,8 +528,12 @@ def build_base():
         join(b, box(xa, xb, yg, d['yB'] + EPS, zl, zl + p['guia_labio']))
         xa, xb = sorted((sx * (bw - 5), sx * (bw + h + EPS)))
         join(b, box(xa, xb, d['yt1'] + h, d['yB'] + EPS, zf - EPS, zl))
-        xa, xb = sorted((sx * (bw + h - p['reten_alto']), sx * (bw + h + EPS)))
-        join(b, box(xa, xb, d['yt0'] - 1.5, d['yt0'] - 0.3, zf - EPS, zf + bg))
+        cut(b, cyl((sx * (bw - 1.0 + p['lengueta_resalte']), d['yt0'] + 3.2, zf), (sx * (bw - 1.0 + p['lengueta_resalte']), d['yt0'] + 3.2, zl), 1.2))    # muesca del reten
+        gc = p['guia_chaflan']
+        xa, xb = sorted((sx * (bw + h - EPS), sx * (bw + h + gc)))
+        cu = box(xa, xb, yg - EPS, yg + gc, zf, zl + p['guia_labio'] + 1)
+        inter(cu, half((sx * (bw + h + gc), yg, 0), (-sx, -1, 0)))
+        cut(b, cu)
     # I4: dos nervios cerca de la base que retienen la funda
     for sx in (1, -1):
         xc = sx * (L / 2 - (p['reten_funda_r'] - p['reten_funda_sale']))
@@ -524,10 +544,8 @@ def planta_peana():
     """Planta (x, y) de la base de la peana corredera: recta, con orejas delante y detras que pasan el reten."""
     p = P
     d = D()
-    w, n, o = p['bandeja_ancho'] / 2, p['bandeja_estrecho'], p['bandeja_oreja']
-    y0, y1 = d['yt0'], d['yt1']
-    return [(w, y0), (w, y0 + o), (w - n, y0 + o), (w - n, y1 - o), (w, y1 - o), (w, y1),
-            (-w, y1), (-w, y1 - o), (-w + n, y1 - o), (-w + n, y0 + o), (-w, y0 + o), (-w, y0)]
+    w = p['bandeja_ancho'] / 2
+    return [(w, d['yt0']), (w, d['yt1']), (-w, d['yt1']), (-w, d['yt0'])]
 
 
 
@@ -570,16 +588,6 @@ def camara(z0, z1):
     cut(c, cyl((0, 0, z0 - 1), (0, 0, z1 + 1), p['eje_radio']))
     return c
 
-def diente_ancla(z0, z1):
-    """Diente de trinquete: el taco sube por la rampa y queda retenido, con la espiral precargada."""
-    p = P
-    d = D()
-    r1 = p['muelle_radio_ext'] + p['muelle_ancla_largo'] + p['holg_giro']
-    rm = p['muelle_radio_ext'] + p['muelle_ancla_largo'] / 2
-    g1 = d['gn'] - math.degrees(math.asin(p['muelle_ancla_ancho'] / 2 / rm)) - 0.6
-    pts = arco_pol(r1 + 0.6, g1 - 14, g1) + [pol(r1 - p['ancla_diente'], g1)]
-    return prisma([(pts, [])], 'z', z0, z1)
-
 def poligono_tapeta(e=0.0):
     """Contorno (x, yL) de la tapa trasera: cubre toda la camara menos las dos bandas de los puentes."""
     p = P
@@ -593,11 +601,21 @@ def tapa_L():
     hx, hy, Do, zs, cb, ct = d['hx'], d['hy'], d['Do'], d['zs'], d['cb'], d['ct']
     t = box(-hx, hx, -hy, hy, zs, Do)
     cut(t, camara(cb, ct))
-    join(t, diente_ancla(cb, ct))
+    # v4.1 (G2): teton en el que entra el ojo del taco de la espiral
+    xt, yt_ = pol(d['rojo'], d['gn'])
+    join(t, cyl((xt, yt_, ct - p['ancla_teton_h'] - p['rotor_holg_axial']), (xt, yt_, ct + EPS), p['ancla_teton_d'] / 2))
     # iman central, dentro del eje, retirado de la piel
     cut(t, cyl((0, 0, cb - EPS), (0, 0, ct - p['iman_central_retiro']), p['iman_aloj_d'] / 2))
     # hueco de la tapa trasera. Fuera de el, arriba y abajo, queda la banda maciza que respalda cada pestillo
     cut(t, prisma([(poligono_tapeta(), [])], 'z', zs - 1, cb))
+    # v4.1 (I5): ranura bajo la banda de arriba para la pestana de la tapa trasera, y muesca para su clip
+    Z, tg, pe = hy - p['puente'], p['tapeta_grosor'], p['tapeta_pestana']
+    c1 = cb - tg / 2 - 0.15
+    px0, px1 = p['tapeta_pestana_x'] - p['tapeta_pestana_ancho'] / 2 - 0.3, p['tapeta_pestana_x'] + p['tapeta_pestana_ancho'] / 2 + 0.3
+    cut(t, prisma([([(Z - EPS, cb + EPS), (Z + pe + 0.3, cb + EPS), (Z + pe + 0.3, c1), (Z + tg / 2, c1), (Z - EPS, c1 - tg / 2 - EPS)], [])], 'x', px0, px1))
+    xk = p['tapeta_clip_x'] + p['tapeta_clip_largo'] - 1.0
+    yk = -(Z - p['holg_presion']) + 0.7 - p['tapeta_clip_resalte']
+    cut(t, cyl((xk, yk, zs - 1), (xk, yk, cb), 0.9))
     # imanes de esquina embutidos
     for sx, sy in ((-1, 1), (1, -1)):
         z0 = zs + p['iman_cubierta']
@@ -623,7 +641,22 @@ def tapa_L():
 def tapeta_L():
     p = P
     d = D()
-    return prisma([(poligono_tapeta(p['holg_presion']), [])], 'z', d['cb'] - p['tapeta_grosor'], d['cb'])
+    cb, tg, hp = d['cb'], p['tapeta_grosor'], p['holg_presion']
+    Ze = d['hy'] - p['puente'] - hp
+    t = prisma([(poligono_tapeta(hp), [])], 'z', cb - tg, cb)
+    # v4.1 (I5): pestana que entra bajo la banda de arriba (con apoyo a 45 grados para imprimirla sin soportes)
+    pe = p['tapeta_pestana']
+    px0, px1 = p['tapeta_pestana_x'] - p['tapeta_pestana_ancho'] / 2, p['tapeta_pestana_x'] + p['tapeta_pestana_ancho'] / 2
+    join(t, prisma([([(Ze - 0.5, cb), (Ze + pe, cb), (Ze + pe, cb - tg / 2), (Ze + tg / 2, cb - tg / 2), (Ze, cb - tg), (Ze - 0.5, cb - tg)], [])], 'x', px0, px1))
+    # clip: lengueta en el borde de abajo, con un resalte que cae en una muesca del panel
+    x0, x1, ca = p['tapeta_clip_x'], p['tapeta_clip_x'] + p['tapeta_clip_largo'], p['tapeta_clip_ancho']
+    cut(t, box(x0, x1 + 0.8, -Ze + ca, -Ze + ca + 0.8, cb - tg - 1, cb + 1))
+    cut(t, box(x1, x1 + 0.8, -Ze - 1, -Ze + ca + 0.8, cb - tg - 1, cb + 1))
+    join(t, cyl((x1 - 1.0, -Ze + 0.7 - p['tapeta_clip_resalte'], cb - tg), (x1 - 1.0, -Ze + 0.7 - p['tapeta_clip_resalte'], cb), 0.7))
+    # v4.1 (G2): resalte sobre el taco de la espiral, para que no pueda levantarse y salirse del teton
+    xt, yt_ = pol(d['rojo'], d['gn'])
+    join(t, cyl((xt, yt_, cb - EPS), (xt, yt_, cb + p['rotor_grosor'] - p['muelle_alto'] - 0.25), 2.0))
+    return t
 
 def espiral(grosor):
     """Contorno de la espiral del muelle (sistema L, plano del rotor). Acaba apuntando a -x."""
@@ -692,6 +725,10 @@ def rotor_L(ang=0.0, muelle=True, grosor=None, montado=True, articulado=False):
         join(r, T().copy(pa))
         join(r, rotz(pa, 180))
     inter(r, cyl((0, 0, zb - 1), (0, 0, zt + 1), d['rA'] if articulado else Rt))
+    yr = d['hy'] - p['puente'] - 1.5                         # v4.1 (I4): puntas rebajadas por la cara de atras
+    for sg in (1, -1):
+        ya, yb = sorted((sg * yr, sg * (d['rA'] + 2)))
+        cut(r, box(-d['rA'], d['rA'], ya, yb, zb - 1, zb + p['rotor_rebaje']))
     join(r, box(-hw, hw, -rbz - EPS, rbz + EPS, zb, zb + p['rotor_alma']))        # alma: puente sobre la espiral
     join(r, cyl((0, 0, zb), (0, 0, zt), p['cubo_radio']))
     cut(r, cyl((0, 0, zb - 1), (0, 0, zt + 1), p['eje_radio'] + p['rotor_holg_eje']))
@@ -702,6 +739,7 @@ def rotor_L(ang=0.0, muelle=True, grosor=None, montado=True, articulado=False):
         sp = prisma([(espiral(g), [])], 'z', zt - p['muelle_alto'], zt)
         x1 = p['muelle_radio_ext'] + p['muelle_ancla_largo']
         join(sp, box(-x1, -p['muelle_radio_ext'] + g, -p['muelle_ancla_ancho'] / 2, p['muelle_ancla_ancho'] / 2, zt - p['muelle_alto'], zt))
+        cut(sp, cyl((-d['rojo'], 0, zb - 1), (-d['rojo'], 0, zt + 1), p['ancla_ojo_d'] / 2))       # ojo del taco
         rotz(sp, p['muelle_ancla_ang'] - (0.0 if montado else p['muelle_precarga']))
         join(r, sp)
     if ang:
@@ -854,6 +892,15 @@ def build_peana():
     b = prisma([(planta_peana(), [])], 'z', zf, zt)          # base corredera: va sobre el suelo, entre las guias
     o = p['bandeja_oreja']                                   # es un marco: el brazalete cuelga por el hueco hasta casi el suelo
     cut(b, box(-d['xin'], d['xin'], d['yt0'] + o, d['yt1'] - o, zf - 1, zt + 1))
+    # v4.1 (I1): reten con lengueta elastica a cada lado; el resalte de la punta cae en una muesca de la guia
+    bw_, lg, lr, ll, yp = p['bandeja_ancho'] / 2, p['lengueta_grosor'], p['lengueta_ranura'], p['lengueta_largo'], d['yt0'] + 2.0
+    for sx in (1, -1):
+        xa, xb = sorted((sx * (bw_ - lg - lr), sx * (bw_ - lg)))
+        cut(b, box(xa, xb, yp - lr, yp + ll, zf - 1, zt + 1))
+        xa, xb = sorted((sx * (bw_ - lg - lr), sx * (bw_ + 1)))
+        cut(b, box(xa, xb, yp - lr, yp, zf - 1, zt + 1))
+        xc = sx * (bw_ - 1.0 + p['lengueta_resalte'])
+        join(b, cyl((xc, yp + 1.2, zf), (xc, yp + 1.2, zt), 1.0))
     lleno = [(af, -h - w), (ab, -h - w)] + arco(ab, R, R + h + w, 180.0, 360.0)[1:] + [(ar, 2 * R + h + w)]
     u = prisma([([an(d, a, n) for a, n in lleno], [])], 'x', -d['xout'], d['xout'])
     join(u, box(-d['xout'], d['xout'], d['ycu'] - d['ro'], d['ycu'] + d['ro'], zt - EPS, d['zcu']))
@@ -965,11 +1012,12 @@ def check():
     return out
 
 def check_pestillo():
-    """Grado a grado: el panel esta bloqueado si, tirando de el 0.6 mm hacia fuera, el rotor choca con la caja."""
+    """Grado a grado: el panel esta bloqueado si, tirando de el hacia fuera, el rotor choca con el labio de la caja."""
     d = D()
     base, tapa = build_base(), build_tapa()
     tira = C.Matrix3D.create()
-    tira.translation = C.Vector3D.create(0, -0.06, 0)
+    tiron = P['rotor_holg_axial'] + P['holg_corte'] + 0.3    # el panel se mueve esto antes de que el pestillo muerda
+    tira.translation = C.Vector3D.create(0, -tiron * K, 0)
     bloq, choca = [], []
     a2 = int(P['rotor_giro'])
     for ang in range(0, a2 + 1):
@@ -1001,6 +1049,20 @@ def tira_atras():
 
 
 
+def check_emergencia():
+    """G1: un clip de 1 mm, junto al pestillo de abajo, recorre la ranura de emergencia sin tocar la caja,
+    y a lo largo de ese recorrido el pestillo esta a su alcance (el clip llega por encima del fondo de la ranura del pestillo)."""
+    p = P
+    d = D()
+    base = build_base()
+    ye = d['Do'] / 2 - (d['cb'] + p['rotor_grosor'] / 2)
+    x0, x1 = d['hw'] + 1.0, -(d['rA'] * math.sin(d['tk']) + d['hw'])
+    n = int((x0 - x1) / 0.5)
+    toca = [round(x0 - i * 0.5, 1) for i in range(n + 1) if vol_inter(cyl((x0 - i * 0.5, ye, -0.5), (x0 - i * 0.5, ye, d['zf'] + 1.5), 0.5), base) > 0.001]
+    r = al_mundo(rotor_L(0.0, False))
+    alcanza = vol_inter(cyl((d['hw'] - 0.3, ye, -0.5), (d['hw'] - 0.3, ye, d['zf'] + 1.5), 0.5), r) > 0.001
+    return ['emergencia: el clip recorre la ranura de x = %.1f a %.1f mm %s; %s' % (x0, x1, 'sin tocar la caja' if not toca else 'y TOCA la caja en %s' % toca, 'el pestillo queda a su alcance' if alcanza else 'NO ALCANZA el pestillo')]
+
 def distancias():
     p = P
     d = D()
@@ -1015,7 +1077,7 @@ def distancias():
     out.append('imanes -> centro del movimiento: central %.1f mm | del rotor %.1f mm' % (math.hypot(ymov - yim, zmov - d['zp']), math.hypot(ymov - yim, zmov - (d['zp'] - p['rotor_radio_iman']))))
     out.append('pinza: contorno libre %.1f mm para un brazalete de %.0f | alto libre %.1f mm' % (contorno(pinza_perfil(d['st_lib'])[1]), p['brazalete_contorno'], d['st_lib'] + 2 * R))
     a = articulado_datos()
-    out.append('pico articulado (calculo): brazo %.1f / %.1f mm, bascula %.1f grados, lamina al %.2f %%, se aparta %.1f mm de lado, %.2f N por pico, gira con rozamiento menor de %.2f' % (a['bx'], a['bz'], a['giro'], a['eps'], a['lado'], a['F'], a['mu']))
+    out.append('pico articulado (calculo): brazo %.1f / %.1f mm, bascula %.1f grados, lamina al %.2f %%, se aparta %.1f mm de lado, %.2f N por pico; limite de rozamiento por palanca %.2f, pero manda el roce del pico contra la piel: 0.35 segun contra-reporte-v4' % (a['bx'], a['bz'], a['giro'], a['eps'], a['lado'], a['F'], a['mu']))
     out.append('exterior con funda: %.1f x %.1f x %.1f mm (ancho x fondo x alto) | caja interior %.1f x %.1f x %.1f | panel %.1f de grueso' % (2 * d['Xo'], 2 * d['Yo'], d['Zo'], d['L'], d['Do'], d['Ho'], p['tapa_alto']))
     out.append('imanes: 2 aguja + 1 central + 1 rotor + 2 panel + 2 caja = 8')
     return out
@@ -1040,7 +1102,7 @@ def imprimibles():
             T().transform(body, m)
         return body
     return [('base', o(build_base(), M_FRENTE_ARRIBA())), ('tapa', o(build_tapa(), M_FRENTE_ABAJO())),
-            ('tapeta', o(build_tapeta(), M_FRENTE_ABAJO())), ('rotor', o(al_mundo(rotor_L(0.0, True, None, False)), M_FRENTE_ABAJO())),
+            ('tapeta', o(build_tapeta(), M_FRENTE_ARRIBA())), ('rotor', o(al_mundo(rotor_L(0.0, True, None, False)), M_FRENTE_ABAJO())),
             ('aguja', needle()), ('peana', build_peana()), ('pinza', o(build_pinza(), M_DE_LADO())),
             ('funda', o(build_funda(ink, centro), M_TECHO_ABAJO())), ('frase', o(T().copy(ink), M_TECHO_ABAJO()))]
 
@@ -1070,8 +1132,8 @@ def probetas():
     cut(pc, cyl((7, 7, p['aguja_suelo']), (7, 7, p['aguja_suelo'] + p['iman_aloj_h']), p['iman_aloj_d'] / 2))
     out.append(('p0-iman-embutido', pc))
     # P1: llave. Panel, tapa trasera, tres rotores (espiral fina, media y gruesa) y aguja de prueba
-    for nombre, body in (('p1-panel', build_tapa()), ('p1-tapa-trasera', build_tapeta())):
-        T().transform(body, M_FRENTE_ABAJO())
+    for nombre, body, m in (('p1-panel', build_tapa(), M_FRENTE_ABAJO()), ('p1-tapa-trasera', build_tapeta(), M_FRENTE_ARRIBA())):
+        T().transform(body, m)
         out.append((nombre, body))
     for nombre, g in MUELLES:
         r = al_mundo(rotor_L(0.0, True, g, False))
@@ -1164,6 +1226,7 @@ def main(comprobar=True):
     if comprobar:
         out += check()
         out += check_pestillo()
+        out += check_emergencia()
     out += distancias()
     app().activeViewport.fit()
     return out
