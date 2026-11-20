@@ -10,7 +10,7 @@ LO ACTUAL (v4)  -  sustituye a la v3
   generador_caja_v4.py (usa frase-v3.json), parametros-fusion-v4.csv, capturas\v4-*.png
   PARCHE v4.1 (20-nov): los ficheros de la v4 estan regenerados con las correcciones de
   contra-reporte-v4.md. Lee reporte-v4\parche-v4.1.pdf. El parche lo subio Claude a GitHub
-  el 20-nov-2026, en la rama "parche-v4.1" (falta fusionarla en "main"). La v4 original la subiste tu. NO imprimir la caja entera sin medir antes el reloj.
+  el 20-nov-2026 y esta fusionado en "main" (pull request 1). La v4 original la subiste tu. NO imprimir la caja entera sin medir antes el reloj.
 
 LO QUE SIGUE ES DE LA V3 (se conserva, ya no manda)
 
@@ -49,8 +49,8 @@ GITHUB
 
   Repositorio: https://github.com/Pepe-a-d/eventually-caja
   A 20-nov-2026 la rama "main" tiene v2, v3, v4 y los tres contra-reportes (lo subiste tu
-  y la otra sesion). El parche v4.1 esta en la rama "parche-v4.1", subido por Claude:
-  falta fusionarlo en "main" (boton "Merge pull request" en la pagina del repositorio).
+  y la otra sesion) y el parche v4.1, que subio y fusiono Claude a peticion tuya
+  (pull request 1, desde la rama "parche-v4.1").
 
 IMPORTANTE
 
