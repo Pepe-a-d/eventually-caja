@@ -4,7 +4,9 @@ Caja impresa en 3D para el reloj **Eventually — Late Edition · 1 of 1**, un r
 
 ![La funda de campana, con la frase en la cara de arriba](capturas/v3-1-funda-de-campana-con-la-frase.png)
 
-**Estado a 20 de noviembre de 2026:** prototipo **v4** modelado en Fusion. **Nada impreso todavía.** La v4 responde al [contra-reporte de la v3](contra-reporte-v3.md); la respuesta punto por punto está en **[reporte-v4/reporte-v4.md](reporte-v4/reporte-v4.md)** (también en [PDF](reporte-v4/reporte-v4.pdf)). Sobre la v4 hay un **parche v4.1** que corrige lo que señala el [contra-reporte de la v4](contra-reporte-v4.md): [reporte-v4/parche-v4.1.md](reporte-v4/parche-v4.1.md). Las capturas y el resto de esta página son todavía de la v3: en la v4 la caja se cierra con la aguja puesta, el frente no tiene esquina cortada y el reloj sale deslizando con su peana.
+> **Estado a 20 de noviembre de 2026: cambio de diseño.** Se imprimieron las probetas P0 y P1 de la v4.1 y la llave magnética no funcionó ([resultados](resultados-probetas.md)). La caja se rediseña: cilíndrica, con una tapa de iris y un ascensor que sube el reloj, movidos por un bisel con engranajes planetarios. **Lo actual es [BRIEF-v5.md](BRIEF-v5.md).** Nada de la v5 está modelado ni impreso. El resto de esta página describe la v4 y la v3, que quedan como historia.
+
+**Estado anterior (v4, parada):** prototipo **v4** modelado en Fusion. La v4 responde al [contra-reporte de la v3](contra-reporte-v3.md); la respuesta punto por punto está en **[reporte-v4/reporte-v4.md](reporte-v4/reporte-v4.md)** (también en [PDF](reporte-v4/reporte-v4.pdf)). Sobre la v4 hay un **parche v4.1** que corrige lo que señala el [contra-reporte de la v4](contra-reporte-v4.md): [reporte-v4/parche-v4.1.md](reporte-v4/parche-v4.1.md). Las capturas y el resto de esta página son todavía de la v3: en la v4 la caja se cierra con la aguja puesta, el frente no tiene esquina cortada y el reloj sale deslizando con su peana.
 
 ## Cómo funciona
 

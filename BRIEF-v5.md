@@ -4,6 +4,51 @@ Escrito el 20 de noviembre de 2026 por la sesión del Mac, a partir de la conver
 
 Cada dato dice de dónde sale: **decidido** (lo eligió Pepe), **estimado** (cuenta a mano de la sesión del Mac, sin CAD) o **supuesto** (medida del reloj sin confirmar).
 
+## 0. Para la sesión del PC: qué ha pasado y qué tienes que saber
+
+**Este documento manda sobre `contexto.md`, `README.md` y todo lo de la v4.** El apartado 0 de `contexto.md` dice que manda la v4 y que el siguiente paso es imprimir P0 y P1: eso ya ocurrió y ya no vale.
+
+**Qué pasó el 20 de noviembre de 2026, en orden:**
+
+1. Pepe imprimió **P0** de `probetas-v4\`. Salió bien: 5,15 mm de alojamiento, holgura de 0,15 mm, piel de 0,8 mm. La imprimió con capa de 0,08 mm, no de 0,2.
+2. Imprimió **P1 y P2** con capa de 0,2 mm, 7 capas inferiores y pared Aracne.
+3. **P1 falló:** los imanes no mueven el rotor, «ni de cerca». La llave magnética, que era la idea central desde el brief original, no funciona con imanes de 5 × 1,6 mm.
+4. Pepe decidió **volver a la fase de diseño**. No quiso arreglar la v4.1.
+5. En una conversación larga con la sesión del Mac eligió, sector por sector, el diseño de este documento.
+
+Los resultados de las probetas están en `resultados-probetas.md`.
+
+**Qué se descartó en esa conversación, para no volver a proponerlo:**
+
+- La aguja como llave, y la aguja en general: ya no hay aguja.
+- Cualquier mecanismo que dependa de imanes.
+- El trinquete.
+- Números o grabados en el iris.
+- La tarjeta bajo el reloj (no cabe por el hueco).
+- Una corona en el costado y una cara plana en el cilindro, como marca del frente.
+- Engranajes escondidos del todo, o del todo a la vista.
+- Girar la base en vez del bisel.
+- El reloj tumbado.
+- Engranajes que giran en su sitio: Pepe quiere que los satélites orbiten.
+
+Siguen descartados de antes: palabras en la tapa, piezas de acero, pestaña de arrancar.
+
+**Qué se puede aprovechar de la v4:**
+
+- Los contornos de la frase (`frase-v3.json`) y la idea de la funda de campana con colchón de aire. Ahora es cilíndrica.
+- La pinza en C de PETG y la peana, adaptadas: la peana ya no desliza entre guías, apoya sobre un pedestal de unos 72 mm y se coloca con dos imanes.
+- El rebaje del NFC.
+- Las holguras de P0 y los ajustes de impresión.
+- La manera de trabajar: generador en Python, parámetros en una lista, probetas ya orientadas, reporte con lo que es del modelo, lo calculado y lo supuesto. `instrucciones-de-trabajo.md` sigue valiendo.
+
+**Qué te pido al empezar:**
+
+1. Pon al día `contexto.md` con un apartado nuevo que mande, y deja la v4 como histórica.
+2. Empieza por el apartado 11 de este documento. Nada más.
+3. Sube el guion con el que generaste los fotogramas del tutorial de la web (`frames/caja/`). Solo existe en el PC, y con la caja nueva habrá que rehacer el tutorial.
+
+**Lo que este documento no sabe:** por qué exactamente falló P1 (si el rotor rozaba, con qué espiral se probó) y el resultado de repetir P0 con capa de 0,2 mm. Si te hace falta, pregúntaselo a Pepe.
+
 ## 1. Por qué hay una v5
 
 - La probeta P1 de la v4.1 falló: los imanes de 5 × 1,6 mm no mueven el mecanismo. Detalle en `resultados-probetas.md`.

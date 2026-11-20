@@ -1,5 +1,10 @@
 # Eventually, la caja: contexto
 
+> **AVISO del 20 de noviembre de 2026, añadido por la sesión del Mac. Lee esto antes que nada.**
+> **La v4 y su parche v4.1 están PARADAS.** La probeta P1 falló: los imanes no mueven el mecanismo. Pepe volvió a la fase de diseño y eligió otra caja: cilíndrica, con iris y ascensor, movidos por un bisel con planetario.
+> **Manda [`BRIEF-v5.md`](BRIEF-v5.md)**, que explica qué pasó, qué se decidió y por dónde empezar. Los resultados de las probetas están en [`resultados-probetas.md`](resultados-probetas.md).
+> Todo lo que sigue en este documento, incluido el apartado 0, es histórico hasta que se ponga al día.
+
 Estado a **19 de noviembre de 2026**, con el **prototipo v4** ya modelado en Fusion (apartado 0; la v3 está en el 1c). Integra el repositorio `Pepe-a-d/eventually-caja` (hasta el commit `4153169`), la web publicada, el contra-reporte de la v2 y el trabajo de las tres versiones. **Donde este documento hable de la v2 o del brief y no coincida con el apartado 1c, manda el 1c.**
 
 ## 0. Estado a 20 de noviembre de 2026: prototipo v4 (MANDA sobre todo lo demás)
