@@ -4,7 +4,7 @@ Caja impresa en 3D para el reloj **Eventually — Late Edition · 1 of 1**, un r
 
 ![La funda de campana, con la frase en la cara de arriba](capturas/v3-1-funda-de-campana-con-la-frase.png)
 
-**Estado a 20 de noviembre de 2026:** prototipo **v4** modelado en Fusion. **Nada impreso todavía.** La v4 responde al [contra-reporte de la v3](contra-reporte-v3.md); la respuesta punto por punto está en **[reporte-v4/reporte-v4.md](reporte-v4/reporte-v4.md)** (también en [PDF](reporte-v4/reporte-v4.pdf)). Las capturas y el resto de esta página son todavía de la v3: en la v4 la caja se cierra con la aguja puesta, el frente no tiene esquina cortada y el reloj sale deslizando con su peana.
+**Estado a 20 de noviembre de 2026:** prototipo **v4** modelado en Fusion. **Nada impreso todavía.** La v4 responde al [contra-reporte de la v3](contra-reporte-v3.md); la respuesta punto por punto está en **[reporte-v4/reporte-v4.md](reporte-v4/reporte-v4.md)** (también en [PDF](reporte-v4/reporte-v4.pdf)). Sobre la v4 hay un **parche v4.1** que corrige lo que señala el [contra-reporte de la v4](contra-reporte-v4.md): [reporte-v4/parche-v4.1.md](reporte-v4/parche-v4.1.md). Las capturas y el resto de esta página son todavía de la v3: en la v4 la caja se cierra con la aguja puesta, el frente no tiene esquina cortada y el reloj sale deslizando con su peana.
 
 ## Cómo funciona
 

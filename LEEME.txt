@@ -8,7 +8,9 @@ LO ACTUAL (v4)  -  sustituye a la v3
   contra-reporte-v3.md        La revision critica de la v3 de la que sale la v4.
   Eventually-caja-v4.f3d, Eventually-caja-v4.step, imprimir-v4\ (9 piezas), probetas-v4\ (17 ficheros)
   generador_caja_v4.py (usa frase-v3.json), parametros-fusion-v4.csv, capturas\v4-*.png
-  La v4 NO esta subida a GitHub. NO imprimir la caja entera sin medir antes el reloj.
+  PARCHE v4.1 (20-nov): los ficheros de la v4 estan regenerados con las correcciones de
+  contra-reporte-v4.md. Lee reporte-v4\parche-v4.1.pdf. El parche lo subio Claude a GitHub
+  el 20-nov-2026 y esta fusionado en "main" (pull request 1). La v4 original la subiste tu. NO imprimir la caja entera sin medir antes el reloj.
 
 LO QUE SIGUE ES DE LA V3 (se conserva, ya no manda)
 
@@ -46,9 +48,9 @@ VERSIONES ANTERIORES (se conservan, ya no mandan)
 GITHUB
 
   Repositorio: https://github.com/Pepe-a-d/eventually-caja
-  A 19-nov-2026 tiene la v2 y el contra-reporte. La v3 aun NO esta subida:
-  Claude no tiene permiso de escritura desde esta sesion. Hay que subir lo de "LO ACTUAL (v3)",
-  la carpeta reporte-v3\ y los cuatro documentos (README, LEEME, contexto, instrucciones).
+  A 20-nov-2026 la rama "main" tiene v2, v3, v4 y los tres contra-reportes (lo subiste tu
+  y la otra sesion) y el parche v4.1, que subio y fusiono Claude a peticion tuya
+  (pull request 1, desde la rama "parche-v4.1").
 
 IMPORTANTE
 
