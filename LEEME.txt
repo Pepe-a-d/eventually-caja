@@ -1,40 +1,59 @@
 EVENTUALLY - LA CAJA
-Carpeta de trabajo. Estado a 19 de noviembre de 2026: prototipo v2 (caja-expositor), sin imprimir.
+Carpeta de trabajo. Estado a 20 de noviembre de 2026: prototipo v4, sin imprimir.
 
-QUE HAY AQUI
+LO ACTUAL (v4)  -  sustituye a la v3
 
-  Eventually-caja-v2.f3d      Modelo actual. Se abre en Fusion: Archivo > Abrir > Abrir desde mi equipo.
-  Eventually-caja-v2.step     El mismo modelo en formato STEP (lo abre Bambu Studio y cualquier CAD).
-  imprimir-v2\                Una pieza por fichero .3mf, para Bambu Studio:
-                              base, tapa, tapeta, rotor, aguja, soporte, funda, frase.
-                              "funda" y "frase" se cargan juntas; "frase" va en azul.
-  capturas\                   Imagenes del modelo (v1 y v2) y de la frase.
-  reporte-v2\                 Reporte ilustrado de la v2. Abre reporte-v2.pdf (17 paginas, 13 figuras).
-                              Tambien esta en .html y .md, con las figuras sueltas en .png.
+  reporte-v4\reporte-v4.pdf   EMPIEZA AQUI. Que cambia y como responde al contra-reporte de la v3.
+  reporte-v4\guia-de-montaje.md  y  reporte-v4\plan-de-pruebas.md
+  contra-reporte-v3.md        La revision critica de la v3 de la que sale la v4.
+  Eventually-caja-v4.f3d, Eventually-caja-v4.step, imprimir-v4\ (9 piezas), probetas-v4\ (17 ficheros)
+  generador_caja_v4.py (usa frase-v3.json), parametros-fusion-v4.csv, capturas\v4-*.png
+  La v4 NO esta subida a GitHub. NO imprimir la caja entera sin medir antes el reloj.
 
-  generador_caja_v2.py        Script que construye el modelo v2 en Fusion. Todas las medidas estan dentro.
-  frase.json                  Contornos de la frase en Reenie Beanie. Lo necesita el generador.
-  parametros-fusion-v2.csv    Los 75 parametros del modelo v2.
+LO QUE SIGUE ES DE LA V3 (se conserva, ya no manda)
+
+LO ACTUAL (v3)
+
+  reporte-v3\reporte-v3.pdf   EMPIEZA AQUI. Que es la v3 y como responde al contra-reporte.
+  reporte-v3\guia-de-montaje.md   Materiales, ajustes de impresion, pausas para los imanes y montaje.
+  reporte-v3\plan-de-pruebas.md   Las cinco probetas: que imprimir, en que orden y que resultado vale.
+  contra-reporte-v2.md        La revision critica de la v2 de la que sale la v3.
+
+  Eventually-caja-v3.f3d      Modelo. Se abre en Fusion: Archivo > Abrir > Abrir desde mi equipo.
+  Eventually-caja-v3.step     El mismo modelo en formato STEP.
+  imprimir-v3\                9 piezas .3mf, ya giradas como deben ir en la cama:
+                              base, tapa, tapeta, rotor, aguja, peana, pinza, funda, frase.
+                              "funda" y "frase" se cargan juntas; "frase" va en azul. "pinza" va en PETG.
+  probetas-v3\                16 ficheros .3mf para las probetas P0 a P4.
+
+  generador_caja_v3.py        Script que construye el modelo v3 en Fusion. Todas las medidas estan dentro.
+  frase-v3.json               Contornos de la frase en Reenie Beanie, sin engordar. Lo necesita el generador.
+  parametros-fusion-v3.csv    Los 135 parametros del modelo v3.
+  capturas\v3-*.png           Imagenes del modelo v3.
+
+DOCUMENTOS
 
   README.md                   Portada del proyecto para GitHub.
   contexto.md                 Estado completo del proyecto: decisiones, medidas, riesgos, pendientes.
-  BRIEF.md, parametros-fusion.csv, referencias\
-                              El brief original (v0) y sus imagenes. Punto de partida, ya superado.
   instrucciones-de-trabajo.md Como se trabaja en este proyecto con Claude.
 
-  Eventually-caja-v1.f3d, Eventually-caja-v1.step, imprimir-v1\, generador_caja_v1.py
-                              Version anterior (caja que se abria por arriba). Archivada.
+VERSIONES ANTERIORES (se conservan, ya no mandan)
+
+  Todo lo que acaba en v2: modelo, imprimir-v2\, generador, parametros, reporte-v2\, frase.json.
+  Todo lo que acaba en v1: caja que se abria por arriba.
+  BRIEF.md, parametros-fusion.csv, referencias\ : el brief original (v0) y sus imagenes.
 
 GITHUB
 
-  Esta carpeta es una copia exacta de lo que debe ir al repositorio
-  https://github.com/Pepe-a-d/eventually-caja . A 19-nov-2026 la v2 aun NO esta subida.
+  Repositorio: https://github.com/Pepe-a-d/eventually-caja
+  A 19-nov-2026 tiene la v2 y el contra-reporte. La v3 aun NO esta subida:
+  Claude no tiene permiso de escritura desde esta sesion. Hay que subir lo de "LO ACTUAL (v3)",
+  la carpeta reporte-v3\ y los cuatro documentos (README, LEEME, contexto, instrucciones).
 
 IMPORTANTE
 
+  - Nada de la v3 esta impreso ni probado. Antes de imprimir la caja entera: probetas P0 y P1.
+  - Las medidas del reloj (corona, brazalete, cierre) son supuestos. El contorno del brazalete
+    fija el alto de la caja: hay que medirlo.
   - No cambies las medidas a mano en Fusion: no se actualizan las formas. Pide el cambio a Claude
     y se regenera el modelo con el generador.
-  - Las medidas del reloj (corona, brazalete, cierre) son supuestos. Hay que medir el reloj montado
-    antes de imprimir la version final.
-  - Antes de imprimir la caja entera: imprimir solo tapa + rotor + tapeta + aguja para probar
-    que la llave magnetica funciona.

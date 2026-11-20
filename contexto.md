@@ -1,6 +1,19 @@
 # Eventually, la caja: contexto
 
-Estado a **19 de noviembre de 2026**, con el **prototipo v3** ya modelado en Fusion (apartado 1c). Integra el repositorio `Pepe-a-d/eventually-caja` (hasta el commit `4153169`), la web publicada, el contra-reporte de la v2 y el trabajo de las tres versiones. **Donde este documento hable de la v2 o del brief y no coincida con el apartado 1c, manda el 1c.**
+Estado a **19 de noviembre de 2026**, con el **prototipo v4** ya modelado en Fusion (apartado 0; la v3 está en el 1c). Integra el repositorio `Pepe-a-d/eventually-caja` (hasta el commit `4153169`), la web publicada, el contra-reporte de la v2 y el trabajo de las tres versiones. **Donde este documento hable de la v2 o del brief y no coincida con el apartado 1c, manda el 1c.**
+
+## 0. Estado a 20 de noviembre de 2026: prototipo v4 (MANDA sobre todo lo demás)
+
+- **v4 modelada en Fusion y exportada.** Responde a `contra-reporte-v3.md` (commit `ddc97e8`, 4 fallos graves y 10 importantes sobre la v3). Detalle en `reporte-v4/reporte-v4.md`; montaje en `reporte-v4/guia-de-montaje.md`; pruebas en `reporte-v4/plan-de-pruebas.md`. **Nada impreso ni medido. Van cinco versiones.**
+- **Qué cambia respecto a la v3 (apartado 1c):** rotor rígido de **un solo sentido**, con tope en cerrado y espiral precargada 18°; la caja **se cierra con la aguja puesta** (fuera el resbalón de la v3, que se acuñaba); un segundo rotor **articulado** opcional para cerrar de un empujón, que cabe en el mismo panel y solo entra si pasa P2; banda maciza del panel detrás de cada pestillo y **tapa trasera entera** a presión (el rotor se monta girado 45° y el taco de la espiral se lleva con un clip hasta pasar un diente); **pinza a medida** (brazalete + 6 mm), dibujada en su forma libre; **peana corredera** entre dos guías con labio, que sale tirando del reloj; **emergencia por la base** (ranura sobre el pestillo de abajo, se arrastra de lado); **retén de la funda** (dos nervios de 0,5 mm); imanes de esquina bajo 1,3 mm (1,2 N) para que la aguja haga de tirador; fuera la esquina achaflanada (el «solo al derecho» es un resalte por detrás); retenes de aguja y tarjeta.
+- **Medidas:** con funda 98,6 × 76,0 × 95,4 mm; caja 94,0 × 71,4 × 92,7; panel 6,6 de grueso. 8 imanes. 165 parámetros (`parametros-fusion-v4.csv`).
+- **Del modelo:** pestillo bloqueado de 0° a 21°, libre desde 22°; rotor rígido libre de 0° a 50°; rotor articulado sin choques en reposo y libre de 0° a 47°; el rotor entra a 45° sin tocar los puentes. Interferencias que quedan, a propósito: roce de la aguja en su rebaje y pellizco de la tarjeta.
+- **Sin hacer:** pista de apertura y aviso del imán en la web (punto 12); quitar imanes de esquina, rotor en PETG, texto interior y pomo (16 a 18); mover v0 y v1 a `archivo/`.
+- **Regla que no se salta:** ninguna caja entera sin medir antes el reloj. `brazalete_contorno` vale 180 mm por suposición.
+- **Preguntas al usuario sin contestar:** fecha de entrega (preguntada cinco veces); si el reloj está montado y cuánto mide el brazalete; si vale cerrar con la aguja puesta; si quiere conservar el clic de imán del panel; si la otra sesión pone la pista y el aviso en la web; grado de los imanes.
+- **GitHub:** el usuario subió la v3 a mano (`277be6d`, `21fb41d`); la otra sesión añadió `contra-reporte-v3.md` (`ddc97e8`). **La v4 no está subida**: esta sesión sigue sin permiso de escritura.
+- **Fusion:** v2, v3 y v4 están en tres documentos distintos sin guardar («Sin título»). El generador de la v4 es `generador_caja_v4.py`, en la carpeta de trabajo, y usa `frase-v3.json`.
+- **Siguiente paso:** medir el reloj e imprimir P0 y P1 de `probetas-v4\`. No modelar una v5 sin ese resultado.
 
 ## 1. Resumen
 
